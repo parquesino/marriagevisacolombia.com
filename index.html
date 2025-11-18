@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Meta Pixel Code -->
     <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -17,209 +16,440 @@
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=1389509355423812&ev=PageView&noscript=1"
     /></noscript>
-    <!-- End Meta Pixel Code -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Colombia Spouse Visa | Colombian Passport</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
     <style>
+        /* --- CSS VARIABLES & RESET --- */
+        :root {
+            --blue-900: #1e3a8a;
+            --blue-800: #1e40af;
+            --blue-700: #1d4ed8;
+            --blue-600: #2563eb;
+            --blue-50: #eff6ff;
+            --green-600: #16a34a;
+            --green-500: #22c55e;
+            --amber-500: #f59e0b;
+            --amber-50: #fffbeb;
+            --gray-800: #1f2937;
+            --gray-700: #374151;
+            --gray-600: #4b5563;
+            --gray-50: #f9fafb;
+            --white: #ffffff;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
         body {
             font-family: 'Inter', sans-serif;
+            background-color: var(--gray-50);
+            color: var(--gray-800);
+            line-height: 1.6;
             scroll-behavior: smooth;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
         }
-        .hero-bg-spouse {
-            background-color: #1e3a8a; /* A deep, trustworthy blue */
+
+        a { text-decoration: none; color: inherit; transition: color 0.2s; }
+        ul { list-style: none; }
+        img { max-width: 100%; height: auto; display: block; }
+
+        /* --- LAYOUT --- */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+        }
+        
+        @media (min-width: 768px) {
+            .grid-2 { grid-template-columns: 1fr 1fr; }
+        }
+
+        .text-center { text-align: center; }
+        .mx-auto { margin-left: auto; margin-right: auto; }
+        .hidden { display: none !important; }
+        .block { display: block; }
+
+        /* --- NAVIGATION --- */
+        nav {
+            background-color: var(--white);
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo-img { height: 48px; width: auto; }
+
+        .nav-links-desktop { display: none; gap: 1.5rem; align-items: center; }
+        .nav-links-desktop a { font-weight: 500; color: var(--gray-700); font-size: 0.9rem; }
+        .nav-links-desktop a:hover { color: var(--blue-600); }
+
+        .mobile-menu-btn { background: none; border: none; cursor: pointer; color: var(--gray-700); }
+        
+        @media (min-width: 768px) {
+            .nav-links-desktop { display: flex; }
+            .mobile-menu-btn { display: none; }
+        }
+
+        #mobile-menu {
+            background-color: var(--white);
+            border-top: 1px solid #eee;
+            padding: 1rem 0;
+        }
+        #mobile-menu a {
+            display: block;
+            padding: 0.75rem 1.5rem;
+            color: var(--gray-700);
+            font-weight: 500;
+        }
+        #mobile-menu a:hover { background-color: var(--blue-50); color: var(--blue-600); }
+
+        /* --- BUTTONS --- */
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .btn-blue { background-color: var(--blue-600); color: white; }
+        .btn-blue:hover { background-color: var(--blue-700); }
+        .btn-green { background-color: var(--green-500); color: white; }
+        .btn-green:hover { background-color: var(--green-600); }
+        .btn-outline { background-color: white; border: 2px solid var(--blue-600); color: var(--blue-600); }
+        .btn-outline:hover { background-color: var(--blue-50); }
+
+        /* --- HERO SECTION --- */
+        .hero-section {
+            background-color: var(--blue-900);
             background-image: radial-gradient(circle at top right, rgba(56, 189, 248, 0.2) 0%, transparent 40%),
                               radial-gradient(circle at bottom left, rgba(250, 204, 21, 0.1) 0%, transparent 35%);
+            color: white;
+            padding: 5rem 0;
+            text-align: center;
         }
+        .hero-title { font-size: 2.5rem; font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
+        .hero-subtitle { font-size: 1.5rem; font-weight: 300; margin-bottom: 2rem; opacity: 0.9; }
+        .hero-text { font-size: 1.125rem; color: #d1d5db; max-width: 42rem; margin: 0 auto 2.5rem auto; }
+
+        @media (min-width: 768px) {
+            .hero-section { padding: 8rem 0; }
+            .hero-title { font-size: 3.75rem; }
+            .hero-subtitle { font-size: 2rem; }
+        }
+
+        /* --- SECTIONS --- */
+        .section-padding { padding: 5rem 0; }
+        .section-title { font-size: 2.25rem; font-weight: 700; color: var(--blue-900); text-align: center; margin-bottom: 3rem; }
+
+        /* --- CARDS & FEATURES --- */
+        .feature-card {
+            background-color: var(--blue-50);
+            border-left: 4px solid;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .feature-amber { background-color: var(--amber-50); border-color: var(--amber-500); }
+        .feature-amber h3 { color: #b45309; }
+        .feature-sky { background-color: #f0f9ff; border-color: #0ea5e9; }
+        .feature-sky h3 { color: #0369a1; }
+        
+        .feature-title { font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem; }
+        
         .camila-photo {
             width: 100%;
-            max-width: 320px; 
-            height: auto;
-            object-fit: cover;
-            border-radius: 0.75rem; 
+            max-width: 320px;
+            border-radius: 0.75rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
-        .section-fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+
+        /* --- TESTIMONIALS --- */
+        .testimonial-card {
+            background-color: var(--white);
+            padding: 2rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+            border-top: 4px solid var(--amber-500);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
-        .section-fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
+        .stars { color: var(--amber-500); display: flex; gap: 0.25rem; margin-bottom: 1rem; }
+        .quote { font-style: italic; color: var(--gray-600); flex-grow: 1; margin-bottom: 1.5rem; }
+
+        /* --- FORM --- */
+        .form-card {
+            background-color: var(--white);
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+            max-width: 42rem;
+            margin: 0 auto;
+        }
+        @media(min-width: 640px) { .form-card { padding: 3.5rem; } }
+
+        .form-group { margin-bottom: 1.5rem; }
+        .form-label { font-size: 1.125rem; font-weight: 500; color: var(--gray-800); display: block; margin-bottom: 0.75rem; }
+        
+        .radio-group { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+        
+        /* Custom Radio Styling */
+        .radio-custom { display: none; } /* Hide actual radio */
+        .radio-custom-label {
+            padding: 0.75rem 1.25rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            color: var(--gray-700);
+            font-size: 0.9rem;
+            transition: all 0.2s;
         }
         .radio-custom:checked + .radio-custom-label {
-            @apply bg-blue-600 text-white border-blue-600 ring-2 ring-blue-400;
+            background-color: var(--blue-600);
+            color: white;
+            border-color: var(--blue-600);
+            box-shadow: 0 0 0 2px #bfdbfe;
         }
-        .radio-custom-label {
-            @apply px-5 py-3 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors text-gray-700 text-sm;
+        .radio-custom-label:hover { background-color: var(--gray-50); }
+
+        select {
+            width: 100%;
+            padding: 0.875rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            background-color: white;
         }
+
+        /* --- RESULTS BOX (Dynamically styled via JS classes, mirrored here) --- */
+        .bg-green-50 { background-color: #f0fdf4; }
+        .text-green-800 { color: #166534; }
+        .border-green-600 { border-color: #16a34a; }
+        
+        .bg-red-50 { background-color: #fef2f2; }
+        .text-red-800 { color: #991b1b; }
+        .border-red-600 { border-color: #dc2626; }
+
+        .bg-yellow-50 { background-color: #fefce8; }
+        .text-yellow-800 { color: #854d0e; }
+        .border-yellow-500 { border-color: #eab308; }
+
+        .border-l-4 { border-left-width: 4px; }
+        .p-6 { padding: 1.5rem; }
+        .rounded-lg { border-radius: 0.5rem; }
+        
+        /* --- PRICING / INVESTMENT --- */
+        .pricing-card {
+            background-color: var(--blue-50);
+            padding: 2rem;
+            border-radius: 1rem;
+            border: 1px solid #bfdbfe;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+        }
+        .price-tag { font-size: 3rem; font-weight: 800; color: var(--blue-800); margin: 1rem 0; }
+        
+        .cost-item {
+            background-color: var(--gray-50);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #e5e7eb;
+        }
+
+        /* --- FAQ --- */
         .faq-item {
-            @apply bg-white p-6 rounded-lg shadow-sm;
+            background-color: var(--white);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 1px 3px 0 rgba(0,0,0,0.1);
+            margin-bottom: 1rem;
         }
+        .faq-question { font-size: 1.1rem; font-weight: 600; color: var(--blue-700); margin-bottom: 0.5rem; }
+
+        /* --- FOOTER --- */
+        footer { background-color: var(--gray-800); color: #9ca3af; padding: 4rem 0; text-align: center; }
+        footer a:hover { color: var(--blue-50); }
+
+        /* --- ANIMATIONS --- */
+        .section-fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+        .section-fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        /* --- COOKIE BANNER --- */
+        #cookie-consent-banner {
+            position: fixed;
+            bottom: 0; left: 0; right: 0;
+            background-color: var(--gray-800);
+            color: white;
+            padding: 1rem;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            z-index: 100;
+            text-align: center;
+        }
+        @media(min-width: 640px) { #cookie-consent-banner { flex-direction: row; } }
+
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800 antialiased">
+<body>
 
-    <!-- NAV -->
-    <nav class="bg-white shadow-lg sticky top-0 z-50">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <div class="flex-shrink-0">
-                    <a href="https://www.abogadosdemigracion.com.co" title="Colombian Passport Home">
-                        <img src="https://static.wixstatic.com/media/d8d541_c0e6b982a4e341f399c07cac0156aebb~mv2.png" alt="Colombian Passport Logo" class="h-12" onerror="this.onerror=null;this.src='https://placehold.co/200x50/0056b3/FFFFFF?text=ColombianPassport.com';">
-                    </a>
+    <nav>
+        <div class="container">
+            <div class="nav-container">
+                <a href="https://www.abogadosdemigracion.com.co" title="Colombian Passport Home">
+                    <img src="https://static.wixstatic.com/media/d8d541_c0e6b982a4e341f399c07cac0156aebb~mv2.png" alt="Colombian Passport Logo" class="logo-img" onerror="this.onerror=null;this.src='https://placehold.co/200x50/0056b3/FFFFFF?text=ColombianPassport.com';">
+                </a>
+                
+                <div class="nav-links-desktop">
+                    <a href="#why-us">Why Us</a>
+                    <a href="#testimonials">Testimonials</a>
+                    <a href="#faq">FAQ</a>
+                    <a href="#investment">Investment</a>
+                    <a href="#form-section" class="btn btn-blue" style="padding: 0.5rem 1rem; font-size: 0.9rem;">Check My Case</a>
                 </div>
-                <div class="hidden md:flex items-center space-x-4">
-                    <a href="#why-us" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Why Us</a>
-                    <a href="#testimonials" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Testimonials</a>
-                    <a href="#faq" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">FAQ</a>
-                    <a href="#investment" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Investment</a>
-                    <a href="#form-section" class="btn bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-500 py-2 px-4 text-sm">Check My Case</a>
-                </div>
-                <div class="md:hidden">
-                    <button id="mobile-menu-button" class="text-gray-700 hover:text-blue-600 focus:outline-none">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-                    </button>
-                </div>
+
+                <button id="mobile-menu-button" class="mobile-menu-btn">
+                    <svg style="width: 24px; height: 24px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
             </div>
         </div>
-        <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg py-2">
-            <a href="#why-us" class="block text-gray-700 hover:bg-blue-50 hover:text-blue-600 px-4 py-2 text-sm">Why Us</a>
-            <a href="#testimonials" class="block text-gray-700 hover:bg-blue-50 hover:text-blue-600 px-4 py-2 text-sm">Testimonials</a>
-            <a href="#faq" class="block text-gray-700 hover:bg-blue-50 hover:text-blue-600 px-4 py-2 text-sm">FAQ</a>
-            <a href="#investment" class="block text-gray-700 hover:bg-blue-50 hover:text-blue-600 px-4 py-2 text-sm">Investment</a>
-            <a href="#form-section" class="block text-gray-700 hover:bg-blue-50 hover:text-blue-600 px-4 py-2 text-sm">Check My Case</a>
+        <div id="mobile-menu" class="hidden">
+            <a href="#why-us">Why Us</a>
+            <a href="#testimonials">Testimonials</a>
+            <a href="#faq">FAQ</a>
+            <a href="#investment">Investment</a>
+            <a href="#form-section">Check My Case</a>
         </div>
     </nav>
 
-    <!-- HERO SECTION -->
-    <header class="hero-bg-spouse text-white py-20 md:py-32 section-fade-in">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 leading-tight">Your Future Together in Colombia Starts Here.</h1>
-            <h2 class="text-2xl sm:text-3xl md:text-4xl font-light mb-8 max-w-3xl mx-auto">Expert Legal Advisory for the Spouse Visa (M-Type)</h2>
-            <p class="text-lg mb-10 max-w-2xl mx-auto text-gray-300">Our goal is to unite families through expert legal guidance. We offer a clear and empathetic advisory process to help you navigate the requirements to live and work in Colombia.</p>
-            <a href="#form-section" class="btn bg-green-500 text-white hover:bg-green-600 focus:ring-green-400 py-4 px-10 text-xl">Do I Qualify? - Free Eligibility Check</a>
+    <header class="hero-section section-fade-in">
+        <div class="container">
+            <h1 class="hero-title">Your Future Together in Colombia Starts Here.</h1>
+            <h2 class="hero-subtitle">Expert Legal Advisory for the Spouse Visa (M-Type)</h2>
+            <p class="hero-text">Our goal is to unite families through expert legal guidance. We offer a clear and empathetic advisory process to help you navigate the requirements to live and work in Colombia.</p>
+            <a href="#form-section" class="btn btn-green" style="padding: 1rem 2.5rem; font-size: 1.1rem;">Do I Qualify? - Free Eligibility Check</a>
         </div>
     </header>
 
-    <!-- WHY US -->
-    <section id="why-us" class="py-20 md:py-28 bg-white section-fade-in">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-blue-800">A Human Process for a Crucial Life Step</h2>
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="flex justify-center md:justify-end">
-                    <img src="https://static.wixstatic.com/media/d8d541_e08ab4e7b0124418a3f5b7e014d1f531~mv2.png" alt="Camila Ocampo, Immigration Lawyer" class="camila-photo shadow-2xl" onerror="this.onerror=null;this.src='https://placehold.co/320x400/1e3a8a/FFFFFF?text=Camila+Ocampo';">
+    <section id="why-us" class="section-padding section-fade-in" style="background-color: white;">
+        <div class="container">
+            <h2 class="section-title">A Human Process for a Crucial Life Step</h2>
+            <div class="grid-2" style="align-items: center;">
+                <div style="display: flex; justify-content: center;">
+                    <img src="https://static.wixstatic.com/media/d8d541_e08ab4e7b0124418a3f5b7e014d1f531~mv2.png" alt="Camila Ocampo, Immigration Lawyer" class="camila-photo" onerror="this.onerror=null;this.src='https://placehold.co/320x400/1e3a8a/FFFFFF?text=Camila+Ocampo';">
                 </div>
-                <div class="space-y-8 text-gray-700 leading-relaxed text-lg">
-                     <div class="bg-amber-50 p-6 rounded-xl border-l-4 border-amber-500 shadow-md">
-                        <h3 class="text-2xl font-semibold text-amber-700 mb-2">Commitment to Your Case with Adaptive Strategy</h3>
-                        <p class="text-amber-600">We understand immigration decisions are discretionary. If your initial application is deemed inadmissible, our service includes preparing and resubmitting new applications without additional legal fees, adapting the legal strategy until we achieve a favorable outcome.</p>
+                <div>
+                     <div class="feature-card feature-amber">
+                        <h3>Commitment to Your Case with Adaptive Strategy</h3>
+                        <p style="color: #92400e;">We understand immigration decisions are discretionary. If your initial application is deemed inadmissible, our service includes preparing and resubmitting new applications without additional legal fees, adapting the legal strategy until we achieve a favorable outcome.</p>
                     </div>
-                     <div class="bg-sky-50 p-6 rounded-xl border-l-4 border-sky-500 shadow-md">
-                        <h3 class="text-2xl font-semibold text-sky-700 mb-2">A Transparent and Stress-Free Process</h3>
-                        <p class="text-sky-600">Our mission is to guide you with complete transparency and empathy. We provide a seamless experience, handling the complexity so you can focus on your new life in Colombia.</p>
+                     <div class="feature-card feature-sky">
+                        <h3>A Transparent and Stress-Free Process</h3>
+                        <p style="color: #0284c7;">Our mission is to guide you with complete transparency and empathy. We provide a seamless experience, handling the complexity so you can focus on your new life in Colombia.</p>
                     </div>
-                    <div>
-                        <h3 class="text-2xl font-semibold text-blue-700 mb-2">Access to Our Trusted Network</h3>
-                        <p>We connect you with trusted partners for all your needs: apostilles, translations, financial consulting, health insurance, and more, ensuring expertise and fair pricing.</p>
+                    <div style="padding: 1.5rem;">
+                        <h3 class="feature-title" style="color: var(--blue-700);">Access to Our Trusted Network</h3>
+                        <p style="color: var(--gray-700);">We connect you with trusted partners for all your needs: apostilles, translations, financial consulting, health insurance, and more, ensuring expertise and fair pricing.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- TESTIMONIALS SECTION -->
-    <section id="testimonials" class="py-20 md:py-28 bg-gray-50 section-fade-in">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-blue-800">What Our Clients Say</h2>
-            <div class="grid md:grid-cols-1 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <!-- Testimonial 1 -->
-                <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-amber-400 flex flex-col h-full">
-                    <div class="flex items-center mb-4">
-                        <svg class="w-6 h-6 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                        <svg class="w-6 h-6 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                        <svg class="w-6 h-6 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                        <svg class="w-6 h-6 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                        <svg class="w-6 h-6 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                    </div>
-                    <p class="text-gray-600 italic text-lg mb-6 flex-grow">"I truly appreciate everything Camila and her team have done for my family... They made a complicated process so much easier to understand. Their kindness and support meant the world to us during this stressful time."</p>
-                    <div class="text-right mt-auto">
-                        <p class="font-bold text-blue-800">- Daniel Marin</p>
-                        <p class="text-sm text-gray-500">Source: Google Review</p>
+    <section id="testimonials" class="section-padding section-fade-in">
+        <div class="container">
+            <h2 class="section-title">What Our Clients Say</h2>
+            <div class="grid-2">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="quote">"I truly appreciate everything Camila and her team have done for my family... They made a complicated process so much easier to understand. Their kindness and support meant the world to us during this stressful time."</p>
+                    <div style="margin-top: auto; text-align: right;">
+                        <p style="font-weight: bold; color: var(--blue-800);">- Daniel Marin</p>
+                        <p style="font-size: 0.875rem; color: var(--gray-500);">Source: Google Review</p>
                     </div>
                 </div>
-                <!-- Testimonial 2 -->
-                <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-amber-400 flex flex-col h-full">
-                    <div class="flex items-center mb-4">
-                         <svg class="w-6 h-6 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                        <svg class="w-6 h-6 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                        <svg class="w-6 h-6 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                        <svg class="w-6 h-6 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                        <svg class="w-6 h-6 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                    </div>
-                    <p class="text-gray-600 italic text-lg mb-6 flex-grow">"From the first phone call, Camila has set herself apart... given her excellent attention to detail, compassionate nature, and impeccable work ethic... She thinks outside the box."</p>
-                    <div class="text-right mt-auto">
-                        <p class="font-bold text-blue-800">- Lynn Kabche</p>
-                        <p class="text-sm text-gray-500">Source: Google Review</p>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="quote">"From the first phone call, Camila has set herself apart... given her excellent attention to detail, compassionate nature, and impeccable work ethic... She thinks outside the box."</p>
+                    <div style="margin-top: auto; text-align: right;">
+                        <p style="font-weight: bold; color: var(--blue-800);">- Lynn Kabche</p>
+                        <p style="font-size: 0.875rem; color: var(--gray-500);">Source: Google Review</p>
                     </div>
                 </div>
             </div>
-             <div class="text-center mt-12">
-                <a href="https://www.google.com/search?sa=X&sca_esv=3cba3ff7c6207a53&hl=es-419&biw=1897&bih=969&tbm=lcl&sxsrf=AE3TifM1XOos4JGShdqsVEemcPu3mqTewA:1758531023524&q=Colombian%20Passport%20-%20Immigration%20Lawyers%20Opiniones&rflfq=1&num=20&stick=H4sIAAAAAAAAAONgkxI2MzAwNDWwNLE0tTS0NDA1NTOz2MDI-IrRyDk_Jz83KTMxTyEgsbi4IL-oREFXwTM3NzO9KLEkMz9PwSexvDK1qFjBvyAzD8hPLV7ESoYmALYzblWEAAAA&rldimm=6001509495919055668&ved=0CAgQ5foLahcKEwiI2rXH_uuPAxUAAAAAHQAAAAAQBQ#lkt=LocalPoiReviews&arid=Ci9DQUlRQUNvZENodHljRjlvT25CUlozSmZiMHhFYjNoRU9VYzRSVk5QT1hCMWJuYxAB" target="_blank" rel="noopener noreferrer" class="btn bg-white text-blue-600 border-2 border-blue-600 hover:bg-blue-50 focus:ring-blue-500 py-3 px-6 text-lg">Read More Reviews on Google</a>
+             <div class="text-center" style="margin-top: 3rem;">
+                <a href="https://www.google.com/search?sa=X&sca_esv=3cba3ff7c6207a53&hl=es-419&biw=1897&bih=969&tbm=lcl&sxsrf=AE3TifM1XOos4JGShdqsVEemcPu3mqTewA:1758531023524&q=Colombian%20Passport%20-%20Immigration%20Lawyers%20Opiniones&rflfq=1&num=20&stick=H4sIAAAAAAAAAONgkxI2MzAwNDWwNLE0tTS0NDA1NTOz2MDI-IrRyDk_Jz83KTMxTyEgsbi4IL-oREFXwTM3NzO9KLEkMz9PwSexvDK1qFjBvyAzD8hPLV7ESoYmALYzblWEAAAA&rldimm=6001509495919055668&ved=0CAgQ5foLahcKEwiI2rXH_uuPAxUAAAAAHQAAAAAQBQ#lkt=LocalPoiReviews&arid=Ci9DQUlRQUNvZENodHljRjlvT25CUlozSmZiMHhFYjNoRU9VYzRSVk5QT1hCMWJuYxAB" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Read More Reviews on Google</a>
             </div>
         </div>
     </section>
 
-    <!-- QUALIFICATION FORM -->
-    <section id="form-section" class="py-20 md:py-28 bg-gray-50 section-fade-in scroll-mt-24">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl">
-            <div class="bg-white p-8 sm:p-10 md:p-14 rounded-2xl shadow-2xl">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-5 text-blue-700">Check Your Spouse Visa Eligibility</h2>
-                <p class="text-center text-gray-600 mb-10 text-lg">Answer these quick questions for a preliminary assessment of your case. It's free, confidential, and there's no commitment.</p>
+    <section id="form-section" class="section-padding section-fade-in">
+        <div class="container">
+            <div class="form-card">
+                <h2 class="section-title" style="margin-bottom: 1rem;">Check Your Spouse Visa Eligibility</h2>
+                <p class="text-center" style="margin-bottom: 2.5rem; color: var(--gray-600);">Answer these quick questions for a preliminary assessment of your case. It's free, confidential, and there's no commitment.</p>
 
-                <form id="spouseVisaForm" class="space-y-8">
-                    <div class="space-y-2">
-                        <label class="form-label text-lg">1. Is your partner a Colombian citizen with a valid Cédula de Ciudadanía?</label>
-                        <div class="flex flex-wrap gap-3 mt-2">
+                <form id="spouseVisaForm">
+                    <div class="form-group">
+                        <label class="form-label">1. Is your partner a Colombian citizen with a valid Cédula de Ciudadanía?</label>
+                        <div class="radio-group">
                             <input type="radio" id="partnerYes" name="isPartnerColombian" value="yes" class="radio-custom" required><label for="partnerYes" class="radio-custom-label">Yes</label>
                             <input type="radio" id="partnerNo" name="isPartnerColombian" value="no" class="radio-custom"><label for="partnerNo" class="radio-custom-label">No</label>
                         </div>
                     </div>
 
-                     <div class="space-y-2">
-                        <label class="form-label text-lg">2. Are you legally married?</label>
-                        <div class="flex flex-wrap gap-3 mt-2">
+                     <div class="form-group">
+                        <label class="form-label">2. Are you legally married?</label>
+                        <div class="radio-group">
                             <input type="radio" id="marriedYes" name="isMarried" value="yes" class="radio-custom" required><label for="marriedYes" class="radio-custom-label">Yes</label>
                             <input type="radio" id="marriedNo" name="isMarried" value="no" class="radio-custom"><label for="marriedNo" class="radio-custom-label">No</label>
                         </div>
                     </div>
                     
-                    <div class="space-y-2">
-                        <label class="form-label text-lg">3. Did you get married in Colombia or abroad?</label>
-                        <div class="flex flex-wrap gap-3 mt-2">
+                    <div class="form-group">
+                        <label class="form-label">3. Did you get married in Colombia or abroad?</label>
+                        <div class="radio-group">
                             <input type="radio" id="marriedInColombia" name="marriageLocation" value="colombia" class="radio-custom" required><label for="marriedInColombia" class="radio-custom-label">In Colombia</label>
                             <input type="radio" id="marriedAbroad" name="marriageLocation" value="abroad" class="radio-custom"><label for="marriedAbroad" class="radio-custom-label">Abroad</label>
                         </div>
                     </div>
 
-                    <div id="registrationQuestion" class="space-y-2 hidden">
-                        <label class="form-label text-lg">4. If you married abroad, have you registered your marriage in Colombia?</label>
-                        <div class="flex flex-wrap gap-3 mt-2">
+                    <div id="registrationQuestion" class="form-group hidden">
+                        <label class="form-label">4. If you married abroad, have you registered your marriage in Colombia?</label>
+                        <div class="radio-group">
                             <input type="radio" id="registeredYes" name="isRegistered" value="yes" class="radio-custom"><label for="registeredYes" class="radio-custom-label">Yes</label>
                             <input type="radio" id="registeredNo" name="isRegistered" value="no" class="radio-custom"><label for="registeredNo" class="radio-custom-label">No</label>
                             <input type="radio" id="registeredUnsure" name="isRegistered" value="unsure" class="radio-custom"><label for="registeredUnsure" class="radio-custom-label">I'm not sure</label>
                         </div>
                     </div>
 
-                    <div>
-                        <label for="applicationCountry" class="form-label text-lg">5. Where do you plan to apply for the visa from?</label>
-                        <select id="applicationCountry" name="applicationCountry" class="mt-2 text-lg w-full px-4 py-3.5 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                    <div class="form-group">
+                        <label for="applicationCountry" class="form-label">5. Where do you plan to apply for the visa from?</label>
+                        <select id="applicationCountry" name="applicationCountry" required>
                           <option value="" disabled selected>Select an option</option>
                           <option value="colombia">From within Colombia</option>
                           <option value="residence">From my country of residence</option>
@@ -227,121 +457,118 @@
                         </select>
                     </div>
 
-                    <div class="space-y-2">
-                        <label class="form-label text-lg">6. Does the foreign spouse have any criminal or judicial records?</label>
-                        <div class="flex flex-wrap gap-3 mt-2">
+                    <div class="form-group">
+                        <label class="form-label">6. Does the foreign spouse have any criminal or judicial records?</label>
+                        <div class="radio-group">
                             <input type="radio" id="criminalNo" name="criminalRecord" value="no" class="radio-custom" required><label for="criminalNo" class="radio-custom-label">No</label>
                             <input type="radio" id="criminalYes" name="criminalRecord" value="yes" class="radio-custom"><label for="criminalYes" class="radio-custom-label">Yes</label>
                         </div>
                     </div>
                     
-                    <div class="space-y-2">
-                        <label class="form-label text-lg">7. Do you plan to live together in Colombia?</label>
-                        <div class="flex flex-wrap gap-3 mt-2">
+                    <div class="form-group">
+                        <label class="form-label">7. Do you plan to live together in Colombia?</label>
+                        <div class="radio-group">
                             <input type="radio" id="liveTogetherYes" name="liveTogether" value="yes" class="radio-custom" required><label for="liveTogetherYes" class="radio-custom-label">Yes</label>
                             <input type="radio" id="liveTogetherNo" name="liveTogether" value="no" class="radio-custom"><label for="liveTogetherNo" class="radio-custom-label">No</label>
                         </div>
                     </div>
 
-                    <button type="submit" id="submitSpouseVisaBtn" class="btn bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-500 w-full text-xl py-4 mt-6">See My Preliminary Assessment</button>
+                    <button type="submit" id="submitSpouseVisaBtn" class="btn btn-blue" style="width: 100%; font-size: 1.1rem; padding: 1rem;">See My Preliminary Assessment</button>
                 </form>
 
-                <div id="resultArea" class="mt-10" style="display: none;"></div>
+                <div id="resultArea" style="display: none; margin-top: 2rem;"></div>
             </div>
         </div>
     </section>
 
-    <!-- DETAILED PROCESS IS REMOVED -->
-    
-     <!-- FAQ (REPLACES DETAILED PROCESS) -->
-    <section id="faq" class="py-20 md:py-28 bg-gray-50 section-fade-in">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-             <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-blue-800">Your Questions Answered</h2>
-             <div class="space-y-6">
+     <section id="faq" class="section-padding section-fade-in" style="background-color: var(--white);">
+        <div class="container" style="max-width: 800px;">
+             <h2 class="section-title">Your Questions Answered</h2>
+             <div>
                 <div class="faq-item">
-                    <h3 class="text-xl font-semibold text-blue-700 mb-2">What is the overall legal process?</h3>
-                    <p class="text-gray-700 leading-relaxed">Our legal service is designed to guide you through every stage. We begin by creating a robust legal strategy for your specific case. We then provide expert review of all your documents and application answers. Once perfect, we handle the official submission to the Ministry of Foreign Affairs, monitor the case, and manage any additional requirements. Finally, we provide full guidance for the mandatory visa registration and obtaining your Foreigner's ID (Cédula).</p>
+                    <h3 class="faq-question">What is the overall legal process?</h3>
+                    <p class="text-gray-700">Our legal service is designed to guide you through every stage. We begin by creating a robust legal strategy for your specific case. We then provide expert review of all your documents and application answers. Once perfect, we handle the official submission to the Ministry of Foreign Affairs, monitor the case, and manage any additional requirements. Finally, we provide full guidance for the mandatory visa registration and obtaining your Foreigner's ID (Cédula).</p>
                 </div>
                 <div class="faq-item">
-                    <h3 class="text-xl font-semibold text-blue-700 mb-2">How do you help with the Foreigner's ID (Cédula de Extranjería)?</h3>
-                    <p class="text-gray-700 leading-relaxed">The Cédula is your official ID in Colombia and obtaining the appointment can be challenging. We provide expert guidance on navigating the Migración Colombia platform, advising on the best times and methods to secure your appointment efficiently, ensuring you have all necessary documents ready for a successful visit.</p>
+                    <h3 class="faq-question">How do you help with the Foreigner's ID (Cédula de Extranjería)?</h3>
+                    <p class="text-gray-700">The Cédula is your official ID in Colombia and obtaining the appointment can be challenging. We provide expert guidance on navigating the Migración Colombia platform, advising on the best times and methods to secure your appointment efficiently, ensuring you have all necessary documents ready for a successful visit.</p>
                 </div>
                 <div class="faq-item">
-                    <h3 class="text-xl font-semibold text-blue-700 mb-2">What's the difference between an 'Inadmissible' and 'Rejected' visa?</h3>
-                    <p class="text-gray-700 leading-relaxed">This is a crucial distinction. An **Inadmissible** visa means the authority requires more information or a document correction; it is not a final denial. In this case, our service includes resubmitting the application as many times as needed at no extra charge for our legal fees. A **Rejected** visa is a final, discretionary decision. In this case, our service is considered complete, and reapplying would require a new service agreement after a 6-month waiting period.</p>
+                    <h3 class="faq-question">What's the difference between an 'Inadmissible' and 'Rejected' visa?</h3>
+                    <p class="text-gray-700">This is a crucial distinction. An <strong>Inadmissible</strong> visa means the authority requires more information or a document correction; it is not a final denial. In this case, our service includes resubmitting the application as many times as needed at no extra charge for our legal fees. A <strong>Rejected</strong> visa is a final, discretionary decision. In this case, our service is considered complete, and reapplying would require a new service agreement after a 6-month waiting period.</p>
                 </div>
                 <div class="faq-item">
-                    <h3 class="text-xl font-semibold text-blue-700 mb-2">How long does the entire process take?</h3>
-                    <p class="text-gray-700 leading-relaxed">Once all documents are gathered and the application is submitted, the review period by the Ministry of Foreign Affairs is typically 3 to 5 weeks. Document collection can add additional time to this timeline.</p>
+                    <h3 class="faq-question">How long does the entire process take?</h3>
+                    <p class="text-gray-700">Once all documents are gathered and the application is submitted, the review period by the Ministry of Foreign Affairs is typically 3 to 5 weeks. Document collection can add additional time to this timeline.</p>
                 </div>
              </div>
         </div>
     </section>
 
-     <!-- INVESTMENT -->
-    <section id="investment" class="py-20 md:py-28 bg-white section-fade-in">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-blue-800">Investment in Your Future Together</h2>
-            <div class="grid md:grid-cols-2 gap-8 items-start">
-                <div class="bg-blue-50 p-8 rounded-2xl shadow-lg border border-blue-200">
-                    <h3 class="text-2xl font-bold text-blue-700 mb-4">Legal Fees</h3>
-                    <p class="text-5xl font-extrabold text-blue-800 mb-4">$550 <span class="text-xl font-medium text-gray-600">USD</span></p>
-                    <p class="text-gray-600 mb-6">A one-time payment for our complete legal support, including consultation, document review, and representation.</p>
-                    <ul class="space-y-3 text-gray-700">
-                        <li class="flex items-start font-semibold text-blue-800 mt-4"><svg class="w-6 h-6 text-blue-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span>Includes resubmission if application is inadmissible.</span></li>
+     <section id="investment" class="section-padding section-fade-in" style="background-color: var(--gray-50);">
+        <div class="container" style="max-width: 1000px;">
+            <h2 class="section-title">Investment in Your Future Together</h2>
+            <div class="grid-2" style="align-items: start;">
+                <div class="pricing-card">
+                    <h3 style="font-size: 1.5rem; font-weight: 700; color: var(--blue-700);">Legal Fees</h3>
+                    <p class="price-tag">$550 <span style="font-size: 1.25rem; font-weight: 500; color: var(--gray-600);">USD</span></p>
+                    <p style="color: var(--gray-600); margin-bottom: 1.5rem;">A one-time payment for our complete legal support, including consultation, document review, and representation.</p>
+                    <ul>
+                        <li style="display: flex; align-items: start; color: var(--blue-800); font-weight: 500;">
+                            <span style="margin-right: 0.5rem; color: var(--blue-600);">✓</span>
+                            Includes resubmission if application is inadmissible.
+                        </li>
                     </ul>
                 </div>
-                <div class="space-y-6 text-gray-700 pt-8">
-                     <h3 class="text-2xl font-bold text-gray-800 mb-4">Government Costs (Third-Party Payments)</h3>
-                     <div class="bg-gray-100 p-6 rounded-lg shadow-sm">
-                        <p class="text-xl font-semibold">Visa Study Fee</p>
-                        <p class="text-2xl font-bold text-gray-800">$54 USD</p>
-                        <p class="text-sm">Paid to the Ministry of Foreign Affairs upon application submission.</p>
+                
+                <div>
+                     <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1.5rem;">Government Costs (Third-Party Payments)</h3>
+                     <div class="cost-item">
+                        <p style="font-size: 1.1rem; font-weight: 600;">Visa Study Fee</p>
+                        <p style="font-size: 1.5rem; font-weight: 700; color: var(--gray-800);">$54 USD</p>
+                        <p style="font-size: 0.875rem;">Paid to the Ministry of Foreign Affairs upon application submission.</p>
                      </div>
-                      <div class="bg-gray-100 p-6 rounded-lg shadow-sm">
-                        <p class="text-xl font-semibold">Visa Issuance Fee</p>
-                        <p class="text-2xl font-bold text-gray-800">$270 USD</p>
-                        <p class="text-sm">Paid to the Ministry of Foreign Affairs once the visa is approved.</p>
-                     </div>
-                      <div class="bg-gray-100 p-6 rounded-lg shadow-sm">
-                        <p class="text-xl font-semibold">Foreigner's ID (Cédula)</p>
-                        <p class="text-2xl font-bold text-gray-800">$280,000 COP</p>
-                        <p class="text-sm">Paid to Migración Colombia on the day of your ID appointment.</p>
-                     </div>
+                      <div class="cost-item">
+                        <p style="font-size: 1.1rem; font-weight: 600;">Visa Issuance Fee</p>
+                        <p style="font-size: 1.5rem; font-weight: 700; color: var(--gray-800);">$270 USD</p>
+                        <p style="font-size: 0.875rem;">Paid to the Ministry of Foreign Affairs once the visa is approved.</p>
+                      </div>
+                      <div class="cost-item">
+                        <p style="font-size: 1.1rem; font-weight: 600;">Foreigner's ID (Cédula)</p>
+                        <p style="font-size: 1.5rem; font-weight: 700; color: var(--gray-800);">$280,000 COP</p>
+                        <p style="font-size: 0.875rem;">Paid to Migración Colombia on the day of your ID appointment.</p>
+                      </div>
                 </div>
             </div>
         </div>
     </section>
 
-     <!-- FINAL CTA -->
-    <section class="py-20 md:py-28 bg-blue-800 text-white section-fade-in">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-4xl md:text-5xl font-bold mb-6">Ready to take the next step?</h2>
-            <p class="text-xl md:text-2xl font-light mb-10 max-w-3xl mx-auto">Don't let bureaucracy delay your life together. Contact us today, and let's start preparing your case with the best legal strategy.</p>
-            <a href="https://wa.me/573223395612?text=Hello%20Camila,%20I'm%20interested%20in%20the%20advisory%20service%20for%20the%20Spouse%20Visa." target="_blank" class="btn bg-green-500 hover:bg-green-600 text-white text-xl py-4 px-10 focus:ring-green-400">Contact via WhatsApp</a>
+     <section class="section-padding section-fade-in" style="background-color: var(--blue-900); color: white; text-align: center;">
+        <div class="container">
+            <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem;">Ready to take the next step?</h2>
+            <p style="font-size: 1.25rem; opacity: 0.9; max-width: 800px; margin: 0 auto 2.5rem auto;">Don't let bureaucracy delay your life together. Contact us today, and let's start preparing your case with the best legal strategy.</p>
+            <a href="https://wa.me/573223395612?text=Hello%20Camila,%20I'm%20interested%20in%20the%20advisory%20service%20for%20the%20Spouse%20Visa." target="_blank" class="btn btn-green" style="font-size: 1.25rem; padding: 1rem 2.5rem;">Contact via WhatsApp</a>
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="bg-gray-800 text-gray-400 py-16">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <footer>
+        <div class="container">
             <a href="https://www.abogadosdemigracion.com.co" target="_blank" rel="noopener noreferrer">
-                <img src="https://static.wixstatic.com/media/d8d541_c0e6b982a4e341f399c07cac0156aebb~mv2.png" alt="Colombian Passport Logo" class="h-12 mx-auto mb-6" onerror="this.onerror=null;this.src='https://placehold.co/200x50/374151/9CA3AF?text=ColombianPassport.com';">
+                <img src="https://static.wixstatic.com/media/d8d541_c0e6b982a4e341f399c07cac0156aebb~mv2.png" alt="Colombian Passport Logo" class="logo-img mx-auto" style="margin-bottom: 1.5rem;" onerror="this.onerror=null;this.src='https://placehold.co/200x50/374151/9CA3AF?text=ColombianPassport.com';">
             </a>
-            <a href="https://www.abogadosdemigracion.com.co" target="_blank" rel="noopener noreferrer" class="mb-1 text-lg block hover:text-blue-400 transition-colors">Colombian Passport</a>
-            <p class="mb-2 mt-4">&copy; <span id="currentYear"></span> ColombianPassport.com. All Rights Reserved.</p>
-            <p class="text-sm mb-6">Expert legal advisory for your immigration journey.</p>
-            <div class="space-x-6">
-                <a href="https://www.abogadosdemigracion.com.co/politica-privacidad" target="_blank" rel="noopener noreferrer" class="hover:text-blue-400 transition-colors">Privacy Policy</a>
-                <a href="mailto:camila@colombianpassport.com" class="hover:text-blue-400 transition-colors">camila@colombianpassport.com</a>
+            <a href="https://www.abogadosdemigracion.com.co" target="_blank" rel="noopener noreferrer" style="display: block; font-size: 1.125rem; margin-bottom: 1rem; color: white;">Colombian Passport</a>
+            <p>&copy; <span id="currentYear"></span> ColombianPassport.com. All Rights Reserved.</p>
+            <p style="font-size: 0.875rem; margin-bottom: 1.5rem;">Expert legal advisory for your immigration journey.</p>
+            <div style="display: flex; justify-content: center; gap: 1.5rem;">
+                <a href="https://www.abogadosdemigracion.com.co/politica-privacidad" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+                <a href="mailto:camila@colombianpassport.com">camila@colombianpassport.com</a>
             </div>
         </div>
     </footer>
 
-    <!-- Cookie Consent Banner -->
-    <div id="cookie-consent-banner" class="fixed bottom-0 left-0 right-0 bg-gray-800 text-white p-4 flex flex-col sm:flex-row items-center justify-center text-center space-y-2 sm:space-y-0 sm:space-x-4 z-50" style="display: none;">
-        <p class="text-sm">We use cookies to improve your experience and for marketing purposes. By continuing, you agree to our <a href="https://www.abogadosdemigracion.com.co/politica-privacidad" target="_blank" rel="noopener noreferrer" class="underline hover:text-blue-400">Privacy Policy</a>.</p>
-        <button id="accept-cookies" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-lg flex-shrink-0">Accept</button>
+    <div id="cookie-consent-banner">
+        <p>We use cookies to improve your experience and for marketing purposes. By continuing, you agree to our <a href="https://www.abogadosdemigracion.com.co/politica-privacidad" target="_blank" rel="noopener noreferrer" style="text-decoration: underline;">Privacy Policy</a>.</p>
+        <button id="accept-cookies" class="btn btn-green" style="padding: 0.5rem 1rem; font-size: 0.875rem;">Accept</button>
     </div>
 
     <script>
@@ -443,7 +670,7 @@
             function displayResults(status, messages, data) {
                 const resultArea = document.getElementById('resultArea');
                 resultArea.innerHTML = '';
-                resultArea.className = 'p-6 rounded-lg text-center';
+                resultArea.className = 'p-6 rounded-lg text-center'; // Reset basic classes
                 resultArea.style.display = 'block';
                 let content = '';
 
@@ -465,11 +692,10 @@
                     resultArea.classList.add('bg-green-50', 'border-l-4', 'border-green-600', 'text-green-800');
                     const finalWhatsappLink = whatsappBaseLink + encodeURIComponent(whatsappMessage + "I would like to receive a service proposal.");
                     content = `
-                        <h3 class="text-2xl md:text-3xl font-bold mb-4">Congratulations! Your case looks ideal for the Spouse Visa. 🎉</h3>
-                        <p class="mb-5 text-lg">Based on your answers, you meet the key preliminary requirements. The next step is to prepare the documentation and strategy for your case.</p>
-                        <p class="font-semibold text-xl mb-6">Send your answers to receive a detailed proposal for our legal services.</p>
-                        <a href="${finalWhatsappLink}" target="_blank" class="btn bg-green-500 text-white hover:bg-green-600 focus:ring-green-400 py-3 px-8 text-lg inline-flex items-center">
-                            <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.886-.001 2.269.655 4.357 1.846 6.077l-1.329 4.855 4.968-1.311zm7.875-6.465c-.073-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.073-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.501-.183-.001-.381-.001-.579.001-.198 0-.523.073-.797.346-.273.273-1.057 1.027-1.057 2.502 0 1.475 1.082 2.899 1.232 3.1 S4.92 15.35 6.636 16.03c1.714.68 3.14 1.1 3.583 1.398.443.299.852.495 1.13.644.278.149.533.125.707-.023.198-.174.852-.868.992-1.066.139-.198.272-.347.372-.422.102-.074.198-.024.347.05.149.074.668.312.792.422.124.11.223.173.248.272.025.1.025.297-.05.571-.075.273-.272.501-.372.624-.101.124-.198.223-.323.347-.124.124-.272.272-.422.372h.001c.223.125.523.173.797.223.297.05.943.025 1.36-.248.444-.272 1.399-1.125 1.622-2.177.223-1.051.223-1.949.148-2.146z"></path></svg>
+                        <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem;">Congratulations! Your case looks ideal for the Spouse Visa. 🎉</h3>
+                        <p style="margin-bottom: 1.5rem;">Based on your answers, you meet the key preliminary requirements. The next step is to prepare the documentation and strategy for your case.</p>
+                        <p style="font-weight: 600; font-size: 1.1rem; margin-bottom: 1.5rem;">Send your answers to receive a detailed proposal for our legal services.</p>
+                        <a href="${finalWhatsappLink}" target="_blank" class="btn btn-green">
                             Send & Request Proposal
                         </a>
                     `;
@@ -477,26 +703,25 @@
                     resultArea.classList.add('bg-yellow-50', 'border-l-4', 'border-yellow-500', 'text-yellow-800');
                     const finalWhatsappLink = whatsappBaseLink + encodeURIComponent(whatsappMessage + "I would like to discuss my case to see the next steps.");
                     content = `
-                        <h3 class="text-2xl md:text-3xl font-bold mb-4">Thank You! Your Case Requires Special Attention.</h3>
-                        <p class="mb-5 text-lg">Based on your answers, there are some points that need to be reviewed by an expert before proceeding. The points to consider are:</p>
-                        <ul class="text-left list-disc list-inside mb-6 space-y-2">
+                        <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem;">Thank You! Your Case Requires Special Attention.</h3>
+                        <p style="margin-bottom: 1.5rem;">Based on your answers, there are some points that need to be reviewed by an expert before proceeding. The points to consider are:</p>
+                        <ul style="text-align: left; list-style: disc; padding-left: 1.5rem; margin-bottom: 1.5rem;">
                             ${messages.map(msg => `<li>${msg}</li>`).join('')}
                         </ul>
-                        <p class="font-semibold text-xl mb-6">Contact us to analyze your situation in detail and define the best legal strategy.</p>
-                        <a href="${finalWhatsappLink}" target="_blank" class="btn bg-green-500 text-white hover:bg-green-600 focus:ring-green-400 py-3 px-8 text-lg inline-flex items-center">
-                           <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.886-.001 2.269.655 4.357 1.846 6.077l-1.329 4.855 4.968-1.311zm7.875-6.465c-.073-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.073-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.501-.183-.001-.381-.001-.579.001-.198 0-.523.073-.797.346-.273.273-1.057 1.027-1.057 2.502 0 1.475 1.082 2.899 1.232 3.1 S4.92 15.35 6.636 16.03c1.714.68 3.14 1.1 3.583 1.398.443.299.852.495 1.13.644.278.149.533.125.707-.023.198-.174.852-.868.992-1.066.139-.198.272-.347.372-.422.102-.074.198-.024.347.05.149.074.668.312.792.422.124.11.223.173.248.272.025.1.025.297-.05.571-.075.273-.272.501-.372.624-.101.124-.198.223-.323.347-.124.124-.272.272-.422.372h.001c.223.125.523.173.797.223.297.05.943.025 1.36-.248.444-.272 1.399-1.125 1.622-2.177.223-1.051.223-1.949.148-2.146z"></path></svg>
+                        <p style="font-weight: 600; font-size: 1.1rem; margin-bottom: 1.5rem;">Contact us to analyze your situation in detail and define the best legal strategy.</p>
+                        <a href="${finalWhatsappLink}" target="_blank" class="btn btn-green">
                            Discuss My Case
                         </a>
                     `;
                 } else { // NOT_QUALIFIED
                     resultArea.classList.add('bg-red-50', 'border-l-4', 'border-red-600', 'text-red-800');
                     content = `
-                        <h3 class="text-2xl md:text-3xl font-bold mb-4">Important Information About Your Case</h3>
-                        <p class="mb-5 text-lg">Thank you for your answers. Based on the information provided, we have identified some points that do not meet the fundamental requirements for the Spouse Visa:</p>
-                        <ul class="text-left list-disc list-inside mb-6 space-y-2">
+                        <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem;">Important Information About Your Case</h3>
+                        <p style="margin-bottom: 1.5rem;">Thank you for your answers. Based on the information provided, we have identified some points that do not meet the fundamental requirements for the Spouse Visa:</p>
+                        <ul style="text-align: left; list-style: disc; padding-left: 1.5rem; margin-bottom: 1.5rem;">
                              ${messages.map(msg => `<li>${msg}</li>`).join('')}
                         </ul>
-                        <p class="mb-6 text-lg">If your situation changes or you believe there has been a misunderstanding, please contact us.</p>
+                        <p style="margin-bottom: 1rem;">If your situation changes or you believe there has been a misunderstanding, please contact us.</p>
                     `;
                 }
 
