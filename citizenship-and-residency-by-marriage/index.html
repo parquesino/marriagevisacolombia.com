@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
     <script id="pixel-chaty" async="true" src="https://cdn.chaty.app/pixel.js?id=lCpMyBqY"></script>
+    
     <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/7c537ee898ae8548ee317410/script.js"></script>
+    
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
@@ -34,6 +36,7 @@
     <style>
         /* --- RESET GLOBAL & BASE --- */
         *, *::before, *::after { box-sizing: border-box; }
+        html, body { max-width: 100%; overflow-x: hidden; } /* Fix para evitar scroll horizontal en móviles */
         body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; -webkit-font-smoothing: antialiased; background-color: #F3F4F6; color: #374151; margin: 0; }
         .container { width: 100%; margin-left: auto; margin-right: auto; padding-left: 1rem; padding-right: 1rem; }
         @media (min-width: 640px) { .container { max-width: 640px; padding-left: 1.5rem; padding-right: 1.5rem; } }
@@ -142,10 +145,13 @@
         .google-review-card { background: #fff; padding: 1.5rem; border-radius: 1rem; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); border: 1px solid #F3F4F6; display: flex; flex-direction: column; }
         .review-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 1rem; }
         .reviewer-info { display: flex; align-items: center; gap: 0.75rem; }
-        .reviewer-avatar-img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; }
+        .reviewer-avatar-img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
         .reviewer-details .name { font-weight: 700; font-size: 0.9rem; color: #1F2937; display: block; }
         .reviewer-details .time { font-size: 0.75rem; color: #9CA3AF; }
-        .google-icon { width: 20px; height: 20px; }
+        
+        /* FIX: Google Icon size forced via CSS */
+        .google-icon { width: 24px !important; height: 24px !important; min-width: 24px !important; max-width: 24px !important; flex-shrink: 0; object-fit: contain; }
+        
         .review-stars { color: #FBBC04; margin-bottom: 0.75rem; font-size: 1.1rem; letter-spacing: 1px; }
         .review-text { font-size: 0.9rem; color: #4B5563; line-height: 1.5; flex-grow: 1; font-style: italic; }
 
@@ -329,6 +335,21 @@
                     <div class="google-review-card">
                         <div class="review-header">
                             <div class="reviewer-info">
+                                <img src="daniel-marin.png" alt="Daniel Marin" class="reviewer-avatar-img" onerror="this.src='https://ui-avatars.com/api/?name=D+M&background=random'">
+                                <div class="reviewer-details">
+                                    <span class="name">Daniel Marin</span>
+                                    <span class="time">1 year ago</span>
+                                </div>
+                            </div>
+                            <img src="google-icon.png" alt="Google" class="google-icon" onerror="this.style.display='none'">
+                        </div>
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">"I truly appreciate everything Camila and her team have done for my family. They were always there to answer my questions, no matter how small, and made a complicated process so much easier to understand. Their kindness and support meant the world to us during this stressful time. Thank you for helping us get through it!"</p>
+                    </div>
+
+                    <div class="google-review-card">
+                        <div class="review-header">
+                            <div class="reviewer-info">
                                 <img src="lou-hunt.png" alt="Lou Hunt" class="reviewer-avatar-img" onerror="this.src='https://ui-avatars.com/api/?name=L+H&background=random'">
                                 <div class="reviewer-details">
                                     <span class="name">Lou Hunt</span>
@@ -344,21 +365,6 @@
                     <div class="google-review-card">
                         <div class="review-header">
                             <div class="reviewer-info">
-                                <img src="lex-roman.png" alt="Lex Roman" class="reviewer-avatar-img" onerror="this.src='https://ui-avatars.com/api/?name=L+R&background=random'">
-                                <div class="reviewer-details">
-                                    <span class="name">Lex Roman</span>
-                                    <span class="time">1 month ago</span>
-                                </div>
-                            </div>
-                            <img src="google-icon.png" alt="Google" class="google-icon" onerror="this.style.display='none'">
-                        </div>
-                        <div class="review-stars">★★★★★</div>
-                        <p class="review-text">"The absolute best! Camila and Mariangela were incredibly supportive and communicative through the whole process. They kept me informed, gave me helpful checklists and instructions. They're super thorough and they know exactly what the immigration office is looking for. Truly above and beyond excellent."</p>
-                    </div>
-
-                    <div class="google-review-card">
-                        <div class="review-header">
-                            <div class="reviewer-info">
                                 <img src="monique.png" alt="Monique Hussein Sara" class="reviewer-avatar-img" onerror="this.src='https://ui-avatars.com/api/?name=M+H&background=random'">
                                 <div class="reviewer-details">
                                     <span class="name">Monique Hussein Sara</span>
@@ -368,7 +374,7 @@
                             <img src="google-icon.png" alt="Google" class="google-icon" onerror="this.style.display='none'">
                         </div>
                         <div class="review-stars">★★★★★</div>
-                        <p class="review-text">"My experience with Colombian Passport, specifically with Camila Ocampo Matiz, was exceptional. I cannot recall the last time I received such outstanding service. The communication and efficiency were truly first-class."</p>
+                        <p class="review-text">"My experience with Colombian Passport, specifically with Camila Ocampo Matiz, Esq. and Mariangela Colmenares Esq., was exceptional. I cannot recall the last time I received such outstanding service from a company. The communication, efficiency, and responsiveness were truly first-class.<br><br>I highly recommend this organization. Thank you both for ensuring such a smooth process. I was especially impressed by your attention to detail and the clarity with which you explained each step in obtaining my Visa."</p>
                     </div>
                 </div>
             </div>
