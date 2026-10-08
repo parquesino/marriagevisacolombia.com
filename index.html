@@ -166,6 +166,16 @@
         .pricing-card.featured { border: 2px solid #2563EB; background-color: #EFF6FF; }
         .badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background-color: #f59e0b; color: white; padding: 0.25rem 1rem; border-radius: 1rem; font-size: 0.875rem; font-weight: 700; text-transform: uppercase; }
         .price-tag { font-size: 3rem; font-weight: 800; color: #1e3a8a; margin: 1rem 0; }
+
+        .plans-intro { display: grid; gap: 1.25rem; margin-top: 2rem; }
+        @media (min-width: 860px) { .plans-intro { grid-template-columns: repeat(3, 1fr); } }
+        .plan-card { background: #fff; border: 1px solid #E5E7EB; border-radius: 1rem; padding: 1.75rem 1.5rem; text-align: center; display: flex; flex-direction: column; }
+        .plan-card .plan-name { text-transform: uppercase; font-weight: 800; letter-spacing: 0.08em; font-size: 0.85rem; color: #1e3a8a; }
+        .plan-card .plan-price { font-size: 2.75rem; font-weight: 800; color: #1e3a8a; margin: 0.5rem 0 0; }
+        .plan-card .plan-per { font-size: 0.8rem; color: #6B7280; margin-bottom: 1rem; min-height: 2.4em; display: flex; align-items: flex-start; justify-content: center; }
+        .plan-card .plan-slogan { font-size: 0.95rem; font-weight: 600; color: #374151; margin-bottom: 0.75rem; min-height: 3.4em; display: flex; align-items: flex-start; justify-content: center; }
+        .plan-card .plan-best { font-size: 0.85rem; color: #4B5563; line-height: 1.55; background: #F9FAFB; border: 1px solid #E5E7EB; border-radius: 0.5rem; padding: 0.75rem; margin-bottom: 0; flex-grow: 1; }
+        .plan-card.hot { border: 2px solid #f59e0b; box-shadow: 0 12px 24px -8px rgba(245,158,11,.35); }
         .cost-item { background-color: #ffffff; padding: 1.5rem; border-radius: 0.5rem; margin-bottom: 1rem; border: 1px solid #e5e7eb; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
         .cost-title { font-size: 1.1rem; font-weight: 600; color: #111827; margin:0; }
         .cost-val { font-size: 1.25rem; font-weight: 700; color: #1e3a8a; margin:0.5rem 0; }
@@ -544,7 +554,7 @@
                         </div>
                         <div class="commitment-box">
                             <h3>Our Commitment to Success</h3>
-                            <p>We only represent cases that meet legal requirements. If your visa is Inadmitted or Denied, we re-apply and adapt the strategy at no extra legal cost (you only cover the government's $54 USD study fee).</p>
+                            <p>We only represent cases that meet legal requirements. If your visa is inadmitted, we re-apply once at no extra legal cost (you only cover each new $54 USD government study fee). Protected covers up to 2 requirements and the cédula registration/appointment (up to 2x).</p>
                         </div>
                     </div>
                 </div>
@@ -554,31 +564,71 @@
         <section id="investment" class="section-padding section-fade-in content-section" style="background-color: #F9FAFB;">
             <div class="container" style="max-width: 1000px;">
                 <h2 class="section-title">Investment in Your Future Together</h2>
-                <div class="grid-2" style="align-items: start;">
+                <p style="text-align: center; color: #4B5563; max-width: 700px; margin: 0 auto;">One number per plan, confirmed on your $80 consultation — credited in full when you hire. Government fees always separate, except in Turnkey, where everything is included.</p>
+                <div class="plans-intro">
                     
-                    <div class="pricing-card featured">
-                        <div class="badge">Start Here</div>
-                        <h3 style="font-size: 1.5rem; font-weight: 700; color: #1D4ED8; margin-top: 0;">1-on-1 Strategy Call</h3>
-                        <p class="price-tag">$80 <span style="font-size: 1.25rem; font-weight: 500; color: #4B5563;">USD</span></p>
-                        <p style="color: #4B5563; margin-bottom: 1.5rem; flex-grow: 1;">Not ready for the full service? Book a legal diagnosis. We will map out your timeline, validate your marriage certificates, and evaluate your case.</p>
-                        <p style="font-size: 0.875rem; font-style: italic; color: #1D4ED8; margin-bottom: 1.5rem; font-weight: 600;">✨ 100% Credited to your $550 balance if you hire our full service.</p>
-                        <a href="https://calendar.app.google/PS9iqxJNidkL6LnV7" target="_blank" class="btn btn-blue" style="width: 100%;">Book $80 Strategy Call</a>
+                    <div class="plan-card">
+                        <div class="plan-name">Essential</div>
+                        <div class="plan-price">$450</div>
+                        <div class="plan-per">USD / Single Payment</div>
+                        <div class="plan-slogan">Exactly what's needed for solid cases with time to spare.</div>
+                        <div class="plan-best"><strong>Best for:</strong> a solid marriage case with a registered certificate, no surprises in sight, no urgency (45+ days, no overstay).</div>
                     </div>
 
-                    <div class="pricing-card">
-                        <h3 style="font-size: 1.5rem; font-weight: 700; color: #1e3a8a; margin-top: 0;">Full Legal Service</h3>
-                        <p class="price-tag">$550 <span style="font-size: 1.25rem; font-weight: 500; color: #4B5563;">USD</span></p>
-                        <p style="color: #4B5563; margin-bottom: 1.5rem; flex-grow: 1;">A one-time payment for our complete legal support, including consultation, document review, and representation.</p>
-                        <ul style="list-style: none; padding:0; margin-bottom: 1.5rem;">
-                            <li style="display: flex; align-items: start; color: #374151; font-weight: 500; margin-bottom: 0.5rem;">
-                                <span style="margin-right: 0.5rem; color: #16A34A;">✓</span> Includes resubmission if application is inadmissible.
-                            </li>
-                            <li style="display: flex; align-items: start; color: #374151; font-weight: 500;">
-                                <span style="margin-right: 0.5rem; color: #16A34A;">✓</span> Guidance for the Cédula appointment.
-                            </li>
-                        </ul>
-                        <a href="#form-section" class="btn btn-outline" style="width: 100%; text-align: center;">Check Eligibility First</a>
+                    <div class="plan-card hot">
+                        <div class="plan-name">Protected</div>
+                        <div class="plan-price">$650</div>
+                        <div class="plan-per">USD / Single Payment</div>
+                        <div class="plan-slogan">Coverage against surprises, no unnecessary costs.</div>
+                        <div class="plan-best"><strong>Best for:</strong> a case that could bring a requirement or inadmission — foreign certificates, prior visas — or any urgency (under 45 days, overstay).</div>
                     </div>
+                    <div class="plan-card">
+                        <div class="plan-name">Turnkey</div>
+                        <div class="plan-price">$2,900</div>
+                        <div class="plan-per">USD flat · 50% on signing, 50% on filing</div>
+                        <div class="plan-slogan">Full management until your document is delivered.</div>
+                        <div class="plan-best"><strong>Best for:</strong> zero availability for payments, certificates, appointments or errands — we handle it all, government fees included.</div>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin: 2.5rem auto 0; max-width: 640px;">
+                    <p style="color: #1E3A8A; font-size: 1.25rem; font-weight: 800; margin-bottom: 0.5rem;">Not sure which plan fits your case?</p>
+                    <p style="color: #4B5563; font-size: 1rem; margin-bottom: 1.5rem;">Book a 1-on-1 consultation and Camila will validate your marriage certificates and help you choose the right plan — before you pay a single dollar more.</p>
+                    <a href="https://calendar.app.google/PS9iqxJNidkL6LnV7" target="_blank" class="btn btn-blue" style="max-width: 460px; margin-left: auto; margin-right: auto;">Book Your $80 Consultation</a>
+                    <p style="font-size: 0.85rem; color: #6B7280; margin-top: 0.75rem;">Credited in full when you hire any plan.</p>
+                </div>
+
+                <div style="overflow-x: auto; border: 1px solid #E5E7EB; border-radius: 1rem; background: #fff; margin-top: 2rem;">
+                <p style="font-size: 0.8rem; color: #6B7280; margin: 0; padding: 0.9rem 1rem 0;">All prices in USD. Cédula government fee in COP.</p>
+                <table style="width: 100%; min-width: 720px; table-layout: fixed; border-collapse: collapse; font-size: 0.82rem;">
+                    <thead>
+                        <tr style="background: #1e3a8a; color: #fff;">
+                            <th style="text-align: left; padding: 12px 14px; width: 40%;">Spouse service</th>
+                            <th style="padding: 12px 10px; width: 20%;">Essential<br>$450</th>
+                            <th style="padding: 12px 10px; width: 20%; background: #f59e0b;">Protected<br>$650 ★</th>
+                            <th style="padding: 12px 10px; width: 20%;">Turnkey<br>$2,900</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td style="padding: 9px 14px;">Strategy consultation ($80, credited on hire)</td><td align="center">✓</td><td align="center" style="background: #EFF6FF;">✓</td><td align="center">✓</td></tr>
+                        <tr style="background: #F9FAFB;"><td style="padding: 9px 14px;">Document Review & Building</td><td align="center">✓</td><td align="center" style="background: #EFF6FF;">✓</td><td align="center">✓</td></tr>
+                        <tr><td style="padding: 9px 14px;">Legal guidance until file complete</td><td align="center">✓</td><td align="center" style="background: #EFF6FF;">✓</td><td align="center">✓</td></tr>
+                        <tr style="background: #F9FAFB;"><td style="padding: 9px 14px;">Final file prep, SITAC filing, daily tracking</td><td align="center">✓</td><td align="center" style="background: #EFF6FF;">✓</td><td align="center">✓</td></tr>
+                        <tr><td style="padding: 9px 14px;">Official Spanish translations (per page)</td><td align="center"><b>$20</b></td><td align="center" style="background: #EFF6FF;"><small>Up to 2 pages included</small></td><td align="center"><small>All included</small></td></tr>
+                        <tr style="background: #F9FAFB;"><td style="padding: 9px 14px;">Cancillería requirements + response</td><td align="center"><b>$80</b> each</td><td align="center" style="background: #EFF6FF;"><small>Up to 2 included</small></td><td align="center"><small>All included</small></td></tr>
+                        <tr><td style="padding: 9px 14px;">Inadmission & re-application</td><td align="center"><b>$80</b></td><td align="center" style="background: #EFF6FF;"><small>1 included, no legal fees</small></td><td align="center"><small>All needed</small></td></tr>
+                        <tr style="background: #F9FAFB;"><td style="padding: 9px 14px;">Criminal records procurement (US/CA)</td><td align="center"><b>$150</b></td><td align="center" style="background: #EFF6FF;"><b>$150</b></td><td align="center">✓</td></tr>
+                        <tr><td style="padding: 9px 14px;">Records apostille (US/CA, each)</td><td align="center"><b>$140</b></td><td align="center" style="background: #EFF6FF;"><b>$140</b></td><td align="center">✓</td></tr>
+                        <tr style="background: #F9FAFB;"><td style="padding: 9px 14px;">State/provincial apostilles (US/CA, each)</td><td align="center"><b>$160</b></td><td align="center" style="background: #EFF6FF;"><b>$160</b></td><td align="center">✓</td></tr>
+                        <tr><td style="padding: 9px 14px;">Police fingerprinting in Colombia (FBI/RCMP)</td><td align="center"><b>$320</b></td><td align="center" style="background: #EFF6FF;"><b>$320</b></td><td align="center">✓</td></tr>
+                        <tr style="background: #F9FAFB;"><td style="padding: 9px 14px;">Visa registration in Migración Colombia</td><td align="center">✓</td><td align="center" style="background: #EFF6FF;">✓</td><td align="center">✓</td></tr>
+                        <tr><td style="padding: 9px 14px;">Cédula de Extranjería appointment</td><td align="center"><b>$60</b></td><td align="center" style="background: #EFF6FF;"><small>Up to 2x included</small></td><td align="center"><small>All needed</small></td></tr>
+                        <tr style="background: #F9FAFB;"><td style="padding: 9px 14px;">Cédula pickup with POA</td><td align="center"><b>$95</b></td><td align="center" style="background: #EFF6FF;"><b>$95</b></td><td align="center">✓</td></tr>
+                        <tr><td style="padding: 9px 14px;">Beneficiary visa legal fee</td><td align="center"><b>$350</b></td><td align="center" style="background: #EFF6FF;"><b>$200</b></td><td align="center"><b>$100</b></td></tr>
+                        <tr style="background: #F9FAFB;"><td style="padding: 9px 14px;">Government fees (Study $54 USD + Issuance M $270 USD + Cédula $294,000 COP)</td><td align="center"><small>Separate</small></td><td align="center" style="background: #EFF6FF;"><small>Separate</small></td><td align="center"><small>Included</small></td></tr>
+                        <tr style="background: #1e3a8a; color: #fff;"><td style="padding: 11px 14px;"><b>Price</b></td><td align="center"><b>$450</b></td><td align="center" style="background: #b45309;"><b>$650 ★</b></td><td align="center"><b>$2,900</b></td></tr>
+                    </tbody>
+                </table>
                 </div>
 
                 <div style="margin-top: 4rem;">
@@ -628,9 +678,10 @@
                 <div class="footer-links">
                     <h4 style="color: #ffffff; font-size: 1.1rem; margin-bottom: 0.5rem; margin-top: 0;">Explore More</h4>
                     <a href="https://www.colombianpassport.com/">Our Main Website</a>
-                    <a href="https://www.colombianpassport.com/who-is-camila-ocampo">Meet Camila Ocampo (Full Bio)</a>
+                    <a href="https://www.colombianpassport.com/about-us">About Us</a>
                     <a href="https://www.colombianpassport.com/newsroom">Immigration News & Blog</a>
                     <a href="https://www.colombianpassport.com/privacy-policy" target="_blank">Privacy Policy</a>
+                    <a href="https://www.colombianpassport.com/terms-and-conditions" target="_blank">Terms and Conditions</a>
                 </div>
             </div>
             <div style="border-top: 1px solid #374151; padding-top: 1.5rem;">
@@ -829,7 +880,7 @@
                         <p style="color: #166534; font-size: 1rem; margin-bottom: 1.5rem;">Book a 1-on-1 Strategy Call for $80 USD to map out your timeline and let us handle the system.</p>
                         
                         <p style="color: #059669; font-weight: 700; font-size: 0.95rem; background-color: #D1FAE5; padding: 0.5rem; border-radius: 0.5rem; display: inline-block;">
-                            ✨ The $80 fee is 100% credited towards our full legal service.
+                            ✨ The $80 fee is 100% credited towards any plan you hire.
                         </p>
                         
                         <div style="margin-top: 1.5rem;">
