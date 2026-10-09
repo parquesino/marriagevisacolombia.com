@@ -808,7 +808,24 @@
                         messages.push('A marriage abroad must be registered in Colombia before applying for the visa. We can assist you with this process.');
                     }
 
-                    displayResults(status, messages);
+                    // Redirección a página de resultado para tracking de conversión en GTM/Google Ads.
+                    // Guardamos el detalle en sessionStorage y pasamos solo el status en la URL
+                    // para que GTM pueda disparar por Page View (mucho más fiable que click en botón).
+                    var resultSlug = status === 'QUALIFIED' ? 'qualified' : (status === 'MORE_INFO_NEEDED' ? 'more-info' : 'not-qualified');
+                    try {
+                        sessionStorage.setItem('spouseVisaResult', JSON.stringify({
+                            status: resultSlug,
+                            messages: messages,
+                            applicationCountry: data.applicationCountry || '',
+                            timestamp: new Date().toISOString()
+                        }));
+                    } catch (e) {}
+                    window.dataLayer = window.dataLayer || [];
+                    window.dataLayer.push({
+                        event: 'eligibility_completed',
+                        eligibility_status: resultSlug
+                    });
+                    window.location.href = 'eligibility-result.html?status=' + resultSlug;
                 });
             }
 
@@ -860,63 +877,16 @@
             }
 
             function displayResults(status, messages) {
-                resultArea.innerHTML = '';
-                resultArea.style.display = 'block';
-                let content = '';
-
-                if(status === 'QUALIFIED') {
-                    resultArea.className = 'result-qualified';
-                    content = `
-                        <h3 style="font-size: 1.75rem; color: #166534;">Great news! You meet the basic legal requirements. 💍</h3>
-                        <p style="color: #15803d; font-weight: 500; font-size: 1.125rem;">However, the real challenge isn't getting rejected—it's the bureaucratic nightmare that can burn through your tourist days and ruin your plans together.</p>
-                        
-                        <ul style="color: #166534; text-align: left; padding-left: 1.5rem; list-style: decimal; margin-bottom: 1.5rem;">
-                            <li style="margin-bottom: 0.5rem; font-weight: 500;">Fighting the confusing and unstable SITAC platform.</li>
-                            <li style="margin-bottom: 0.5rem; font-weight: 500;">Receiving incomprehensible 'requerimientos' (requests for more info) or an 'inadmisión'.</li>
-                            <li style="margin-bottom: 0.5rem; font-weight: 500;">The immense stress of hunting for a Cédula appointment while the system crashes every Sunday at 5 PM.</li>
-                        </ul>
-                        
-                        <p style="color: #14532d; font-weight: 700; font-size: 1.125rem; margin-bottom: 0.5rem;">Don't let paperwork stress your relationship.</p>
-                        <p style="color: #166534; font-size: 1rem; margin-bottom: 1.5rem;">Book a 1-on-1 Strategy Call for $80 USD to map out your timeline and let us handle the system.</p>
-                        
-                        <p style="color: #059669; font-weight: 700; font-size: 0.95rem; background-color: #D1FAE5; padding: 0.5rem; border-radius: 0.5rem; display: inline-block;">
-                            ✨ The $80 fee is 100% credited towards any plan you hire.
-                        </p>
-                        
-                        <div style="margin-top: 1.5rem;">
-                            <a href="https://calendar.app.google/PS9iqxJNidkL6LnV7" target="_blank" class="btn btn-green" style="font-size: 1.125rem; padding: 1.25rem 2rem; width: 100%;">
-                                Book $80 Strategy Call
-                            </a>
-                        </div>
-                    `;
-                } else if(status === 'MORE_INFO_NEEDED') {
-                    resultArea.className = 'result-more-info';
-                    content = `
-                        <h3 style="color: #854D0E;">Thank You! Your Case Requires Special Attention.</h3>
-                        <p style="margin-bottom: 1.5rem; color: #854D0E;">Based on your answers, there are some points that need to be reviewed by an expert before proceeding. The points to consider are:</p>
-                        <ul style="text-align: left; list-style: disc; padding-left: 1.5rem; margin-bottom: 1.5rem; color: #854D0E;">
-                            ${messages.map(msg => `<li>${msg}</li>`).join('')}
-                        </ul>
-                        <p style="font-weight: 600; font-size: 1.1rem; margin-bottom: 1.5rem; color: #854D0E;">Book a Strategy Call to analyze your situation in detail and define the best legal path.</p>
-                        <a href="https://calendar.app.google/PS9iqxJNidkL6LnV7" target="_blank" class="btn btn-amber" style="width: 100%;">
-                           Book $80 Strategy Call
-                        </a>
-                    `;
-                } else { // NOT_QUALIFIED
-                    resultArea.className = 'result-not-qualified';
-                    content = `
-                        <h3 style="color: #991B1B;">Important Information About Your Case</h3>
-                        <p style="margin-bottom: 1.5rem; color: #991B1B;">Thank you for your answers. Based on the information provided, we have identified some points that do not meet the fundamental requirements for the Spouse Visa:</p>
-                        <ul style="text-align: left; list-style: disc; padding-left: 1.5rem; margin-bottom: 1.5rem; color: #991B1B;">
-                             ${messages.map(msg => `<li>${msg}</li>`).join('')}
-                        </ul>
-                        <p style="margin-bottom: 1rem; color: #991B1B;">If your situation changes or you believe there has been a misunderstanding, please feel free to explore other visa options.</p>
-                        <a href="https://www.abogadosdemigracion.com.co" target="_blank" class="btn btn-outline" style="margin-top: 1rem; border-color: #991B1B; color: #991B1B;">Explore Other Visas</a>
-                    `;
-                }
-
-                resultArea.innerHTML = content;
-                resultArea.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                // Compatibilidad: cualquier llamada antigua ahora redirige a la página de resultado.
+                var resultSlug = status === 'QUALIFIED' ? 'qualified' : (status === 'MORE_INFO_NEEDED' ? 'more-info' : 'not-qualified');
+                try {
+                    sessionStorage.setItem('spouseVisaResult', JSON.stringify({
+                        status: resultSlug,
+                        messages: messages || [],
+                        timestamp: new Date().toISOString()
+                    }));
+                } catch (e) {}
+                window.location.href = 'eligibility-result.html?status=' + resultSlug;
             }
 
             const consentBanner = document.getElementById('cookie-consent-banner');
