@@ -71,9 +71,7 @@
 
     <nav class="navbar">
         <div class="container navbar-container">
-            <a href="/yt/" title="Colombian Passport Home">
-                <img src="https://static.wixstatic.com/media/d8d541_c0e6b982a4e341f399c07cac0156aebb~mv2.png" alt="ColombianPassport.com Logo" class="navbar-logo" onerror="this.onerror=null;this.src='https://placehold.co/200x50/0056b3/FFFFFF?text=ColombianPassport.com';">
-            </a>
+            <img src="https://static.wixstatic.com/media/d8d541_c0e6b982a4e341f399c07cac0156aebb~mv2.png" alt="ColombianPassport.com Logo" class="navbar-logo" onerror="this.onerror=null;this.src='https://placehold.co/200x50/0056b3/FFFFFF?text=ColombianPassport.com';">
         </div>
     </nav>
 
@@ -82,14 +80,14 @@
             <h1>Loading your result...</h1>
             <p>Please wait a moment.</p>
         </div>
-        <div style="text-align:center;">
+        <div id="backLinkWrapper" style="text-align:center;display:none;">
             <a class="back-link" href="/yt/#form-section">&larr; Back to eligibility form</a>
         </div>
     </main>
 
     <footer class="footer">
         <div class="container">
-            <p style="margin:0;">&copy; <span id="currentYear"></span> ColombianPassport.com. All Rights Reserved. &middot; <a href="https://www.colombianpassport.com/privacy-policy" target="_blank">Privacy Policy</a></p>
+            <p style="margin:0;">&copy; <span id="currentYear"></span> ColombianPassport.com. All Rights Reserved. &middot; <a href="https://www.colombianpassport.com/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a> &middot; <a href="https://www.colombianpassport.com/terms-and-conditions" target="_blank" rel="noopener">Terms and Conditions</a></p>
         </div>
     </footer>
 
@@ -156,8 +154,9 @@
                     + '<h1>Important Information About Your Case</h1>'
                     + '<p>Thank you for your answers. Based on the information provided, we have identified some points that do not meet the fundamental requirements for the Spouse Visa:</p>'
                     + '<ul>' + itemsNQ + '</ul>'
-                    + '<p>If your situation changes or you believe there has been a misunderstanding, please feel free to explore other visa options.</p>'
-                    + '<a href="https://www.abogadosdemigracion.com.co" target="_blank" class="btn btn-outline" style="border-color:#991B1B;color:#991B1B;">Explore Other Visas</a>';
+                    + '<p>Depending on your case, there may be other possible routes. For example, if you are not married yet, the Uni\u00f3n Marital de Hecho (common-law union / permanent partner) declaration before a notary or judge grants the same M-Type visa rights.</p>'
+                    + '<p style="font-weight:600;">Book a Strategy Call so we can review your situation in detail and define the best legal path.</p>'
+                    + '<div style="margin-top:1.5rem;"><a href="https://calendar.app.google/661ktJJw2yrncjVb7" target="_blank" class="btn btn-green">Book $80 Strategy Call</a></div>';
             } else {
                 // Acceso directo sin completar el formulario
                 card.className = 'result-card';
@@ -170,6 +169,12 @@
 
             card.innerHTML = content;
             if (pageTitle) document.title = pageTitle;
+
+            // El enlace para volver al test solo se muestra si no hay respuestas guardadas.
+            var backLinkWrapper = document.getElementById('backLinkWrapper');
+            if (backLinkWrapper) {
+                backLinkWrapper.style.display = (status === 'qualified' || status === 'more-info' || status === 'not-qualified') ? 'none' : 'block';
+            }
 
             // Evento dataLayer para GTM: permite crear el activador personalizado
             // "eligibility_result_view" ADEMÁS del Page View de esta URL.

@@ -50,16 +50,9 @@
         .navbar { background-color: #ffffff; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 50; }
         .navbar-container { display: flex; justify-content: space-between; align-items: center; height: 5rem; }
         .navbar-logo { height: 45px; object-fit: contain; }
-        .nav-links { display: none; }
-        @media (min-width: 768px) { .nav-links { display: flex; align-items: center; gap: 1rem; } }
+        .nav-links { display: flex; align-items: center; gap: 1rem; }
         .nav-link { color: #374151; padding: 0.5rem 0.75rem; border-radius: 0.375rem; font-size: 0.875rem; font-weight: 500; text-decoration: none; transition: color 0.2s; }
         .nav-link:hover { color: #2563EB; }
-        .mobile-menu-button { display: block; color: #374151; background: none; border: none; cursor: pointer; }
-        @media (min-width: 768px) { .mobile-menu-button { display: none; } }
-        .mobile-menu { display: none; background-color: #fff; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); padding: 0.5rem 0; }
-        .mobile-menu.visible { display: block; }
-        .mobile-nav-link { display: block; color: #374151; padding: 0.75rem 1.5rem; font-size: 0.9rem; text-decoration: none; font-weight: 500; }
-        .mobile-nav-link:hover { background-color: #EFF6FF; color: #2563EB; }
         .nav-cta { background-color: #2563EB; color: white !important; padding: 0.5rem 1rem; border-radius: 0.375rem; }
 
         /* --- SECCIÓN HERO (HEADER) --- */
@@ -234,37 +227,19 @@
     <nav class="navbar">
         <div class="container navbar-container">
             <div>
-                <a href="https://www.colombianpassport.com" title="Colombian Passport Home">
-                    <img src="https://static.wixstatic.com/media/d8d541_c0e6b982a4e341f399c07cac0156aebb~mv2.png" alt="ColombianPassport.com Logo" class="navbar-logo" onerror="this.onerror=null;this.src='https://placehold.co/200x50/0056b3/FFFFFF?text=ColombianPassport.com';">
-                </a>
+                <img src="https://static.wixstatic.com/media/d8d541_c0e6b982a4e341f399c07cac0156aebb~mv2.png" alt="ColombianPassport.com Logo" class="navbar-logo" onerror="this.onerror=null;this.src='https://placehold.co/200x50/0056b3/FFFFFF?text=ColombianPassport.com';">
             </div>
             <div class="nav-links">
-                <a href="#faq" class="nav-link">Requirements & FAQ</a>
-                <a href="#form-section" class="nav-link">Check Eligibility</a>
-                <a href="#reviews" class="nav-link">Reviews</a>
-                <a href="#why-us" class="nav-link">Why Us?</a>
-                <a href="#investment" class="nav-link nav-cta">Pricing</a>
+                <a href="#form-section" class="nav-link nav-cta">Check if you qualify</a>
             </div>
-            <div class="mobile-menu-button-container">
-                <button id="mobile-menu-button" class="mobile-menu-button">
-                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width: 1.5rem; height: 1.5rem;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-                </button>
-            </div>
-        </div>
-        <div id="mobile-menu" class="mobile-menu">
-            <a href="#faq" class="mobile-nav-link">Requirements & FAQ</a>
-            <a href="#form-section" class="mobile-nav-link">Check Eligibility</a>
-            <a href="#reviews" class="mobile-nav-link">Reviews</a>
-            <a href="#why-us" class="mobile-nav-link">Why Us?</a>
-            <a href="#investment" class="mobile-nav-link" style="color: #2563EB; font-weight: 700;">Pricing</a>
         </div>
     </nav>
 
     <header class="hero-section section-fade-in">
         <div class="container">
-            <a href="https://share.google/C2CIZMJ1ttgd3ywJE" target="_blank" class="trust-badge-hero">
+            <span class="trust-badge-hero">
                 ⭐ ⭐ ⭐ ⭐ ⭐ 5.0/5 Rating on Google Reviews
-            </a>
+            </span>
             <h1>Colombia Marriage & Spouse Visa 2026: Requirements & Legal Filing.</h1>
             <h2>Expert legal advisory to validate your relationship proof, draft your request letter, and secure your M-Type Visa.</h2>
             
@@ -472,9 +447,9 @@
         <section id="reviews" class="reviews-section content-section section-fade-in" style="background-color: #EFF6FF;">
             <div class="container">
                 <div style="text-align: center;">
-                    <a href="https://share.google/C2CIZMJ1ttgd3ywJE" target="_blank" class="trust-badge-reviews">
+                    <span class="trust-badge-reviews">
                         ⭐ ⭐ ⭐ ⭐ ⭐ 5.0/5 Rating on Google Reviews
-                    </a>
+                    </span>
                 </div>
                 <h2 class="section-title" style="margin-bottom: 2rem;">Real Success Stories</h2>
                 
@@ -596,7 +571,7 @@
                 <div style="text-align: center; margin: 2.5rem auto 0; max-width: 640px;">
                     <p style="color: #1E3A8A; font-size: 1.25rem; font-weight: 800; margin-bottom: 0.5rem;">Not sure which plan fits your case?</p>
                     <p style="color: #4B5563; font-size: 1rem; margin-bottom: 1.5rem;">Book a 1-on-1 consultation and Camila will validate your marriage certificates and help you choose the right plan — before you pay a single dollar more.</p>
-                    <a href="https://calendar.app.google/hA2sb1NVs3p9yMNj9" target="_blank" class="btn btn-blue" style="max-width: 460px; margin-left: auto; margin-right: auto;">Book Your $80 Consultation</a>
+                    <a href="#form-section" class="btn btn-blue" style="max-width: 460px; margin-left: auto; margin-right: auto;">Book Your $80 Consultation</a>
                     <p style="font-size: 0.85rem; color: #6B7280; margin-top: 0.75rem;">Credited in full when you hire any plan.</p>
                 </div>
 
@@ -662,7 +637,7 @@
              <h2>Ready to take the next step?</h2>
             <p class="cta-subtitle">Don't let bureaucracy delay your life together. Contact us today, and let's start preparing your case with the best legal strategy.</p>
             <div>
-                <a href="https://calendar.app.google/hA2sb1NVs3p9yMNj9" target="_blank" class="btn btn-green">Book your Strategy Call</a>
+                <a href="#form-section" class="btn btn-green">Book your Strategy Call</a>
             </div>
         </div>
     </section>
@@ -671,19 +646,14 @@
         <div class="container">
             <div class="footer-grid">
                 <div>
-                    <a href="https://www.colombianpassport.com" title="Colombian Passport Home">
-                        <img src="https://static.wixstatic.com/media/d8d541_c0e6b982a4e341f399c07cac0156aebb~mv2.png" alt="Colombian Passport Logo" class="footer-logo" onerror="this.onerror=null;this.src='https://placehold.co/200x50/374151/9CA3AF?text=ColombianPassport.com';">
-                    </a>
+                    <img src="https://static.wixstatic.com/media/d8d541_c0e6b982a4e341f399c07cac0156aebb~mv2.png" alt="Colombian Passport Logo" class="footer-logo" onerror="this.onerror=null;this.src='https://placehold.co/200x50/374151/9CA3AF?text=ColombianPassport.com';">
                     <p class="brand">Colombian Passport</p>
                     <p class="tagline" style="color: #9CA3AF; font-size: 0.9rem;">Expert legal advisory for your immigration journey.</p>
                 </div>
                 <div class="footer-links">
                     <h4 style="color: #ffffff; font-size: 1.1rem; margin-bottom: 0.5rem; margin-top: 0;">Explore More</h4>
-                    <a href="https://www.colombianpassport.com/">Our Main Website</a>
-                    <a href="https://www.colombianpassport.com/about-us">About Us</a>
-                    <a href="https://www.colombianpassport.com/newsroom">Immigration News & Blog</a>
-                    <a href="https://www.colombianpassport.com/privacy-policy" target="_blank">Privacy Policy</a>
-                    <a href="https://www.colombianpassport.com/terms-and-conditions" target="_blank">Terms and Conditions</a>
+                    <a href="https://www.colombianpassport.com/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>
+                    <a href="https://www.colombianpassport.com/terms-and-conditions" target="_blank" rel="noopener">Terms and Conditions</a>
                 </div>
             </div>
             <div style="border-top: 1px solid #374151; padding-top: 1.5rem;">
@@ -693,7 +663,7 @@
     </footer>
 
     <div id="cookie-consent-banner">
-        <p>We use cookies to improve your experience and for marketing purposes. By continuing, you agree to our <a href="https://www.colombianpassport.com/privacy-policy" target="_blank" style="text-decoration: underline; color: #60A5FA;">Privacy Policy</a>.</p>
+        <p>We use cookies to improve your experience and for marketing purposes. By continuing, you agree to our Privacy Policy.</p>
         <button id="accept-cookies" class="btn btn-green" style="padding: 0.5rem 1rem; font-size: 0.875rem;">Accept</button>
     </div>
 
@@ -701,19 +671,6 @@
         document.addEventListener('DOMContentLoaded', function () {
             const form = document.getElementById('spouseVisaForm');
             const resultArea = document.getElementById('resultArea');
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-
-            if (mobileMenuButton && mobileMenu) {
-                mobileMenuButton.addEventListener('click', function() {
-                    mobileMenu.classList.toggle('visible');
-                });
-                mobileMenu.querySelectorAll('a').forEach(link => {
-                    link.addEventListener('click', () => {
-                        mobileMenu.classList.remove('visible');
-                    });
-                });
-            }
             
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
@@ -723,9 +680,6 @@
                     const targetElement = document.querySelector(targetId);
                     if (targetElement) {
                         targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                        if (mobileMenu && mobileMenu.classList.contains('visible')) {
-                            mobileMenu.classList.remove('visible');
-                        }
                     }
                 });
             });
