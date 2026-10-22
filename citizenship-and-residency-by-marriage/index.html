@@ -165,6 +165,35 @@
         /* --- ANIMATIONS --- */
         .section-fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
         .section-fade-in.visible { opacity: 1; transform: translateY(0); }
+        .btn-blue { background-color: #2563EB; color: #ffffff; width: 100%; font-size: 1.125rem; padding: 1.25rem; margin-top: 1.5rem; }
+        .btn-blue:hover { background-color: #1D4ED8; }
+        .grid-3-cols { display: grid; gap: 2.5rem; }
+        @media (min-width: 768px) { .grid-3-cols { grid-template-columns: repeat(2, 1fr); } }
+        @media (min-width: 1024px) { .grid-3-cols { grid-template-columns: repeat(3, 1fr); } }
+        .why-us-grid { display: grid; gap: 3rem; align-items: center; }
+        @media (min-width: 768px) { .why-us-grid { grid-template-columns: repeat(2, 1fr); } }
+        .camila-photo-container { display: flex; justify-content: center; }
+        .camila-photo { width: 100%; max-width: 320px; height: auto; object-fit: cover; border-radius: 0.75rem; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25); }
+        .why-us-content { display: flex; flex-direction: column; gap: 1.5rem; color: #374151; line-height: 1.625; }
+        .why-us-content h3 { font-size: 1.5rem; font-weight: 600; color: #2563EB; margin-bottom: 0.5rem; }
+        .credentials-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.75rem; }
+        .credentials-list li { display: flex; gap: 0.5rem; align-items: flex-start; color: #374151; }
+        .credentials-list li .check { color: #2563EB; font-weight: bold; font-size: 1.1rem; flex-shrink: 0; margin-top: -2px; }
+        .commitment-box { background-color: #F0FDF4; padding: 1.5rem; border-radius: 0.75rem; border-left: 4px solid #16A34A; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
+        .commitment-box h3 { color: #15803D; }
+        .commitment-box p { color: #16A34A; margin:0; }
+        .plans-intro { display: grid; gap: 1.25rem; margin-top: 2rem; }
+        @media (min-width: 860px) { .plans-intro { grid-template-columns: repeat(3, 1fr); } }
+        .plan-card { background: #fff; border: 1px solid #E5E7EB; border-radius: 1rem; padding: 1.75rem 1.5rem; text-align: center; display: flex; flex-direction: column; }
+        .plan-card .plan-name { text-transform: uppercase; font-weight: 800; letter-spacing: 0.08em; font-size: 0.85rem; color: #1e3a8a; }
+        .plan-card .plan-price { font-size: 2.75rem; font-weight: 800; color: #1e3a8a; margin: 0.5rem 0 0; }
+        .plan-card .plan-per { font-size: 0.8rem; color: #6B7280; margin-bottom: 1rem; min-height: 2.4em; display: flex; align-items: flex-start; justify-content: center; }
+        .plan-card .plan-slogan { font-size: 0.95rem; font-weight: 600; color: #374151; margin-bottom: 0.75rem; min-height: 3.4em; display: flex; align-items: flex-start; justify-content: center; }
+        .plan-card .plan-best { font-size: 0.85rem; color: #4B5563; line-height: 1.55; background: #F9FAFB; border: 1px solid #E5E7EB; border-radius: 0.5rem; padding: 0.75rem; margin-bottom: 0; flex-grow: 1; }
+        .plan-card.hot { border: 2px solid #f59e0b; box-shadow: 0 12px 24px -8px rgba(245,158,11,.35); }
+        .cost-item { background-color: #ffffff; padding: 1.5rem; border-radius: 0.5rem; margin-bottom: 1rem; border: 1px solid #e5e7eb; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
+        .cost-title { font-size: 1.1rem; font-weight: 600; color: #111827; margin:0; }
+        .cost-val { font-size: 1.25rem; font-weight: 700; color: #1e3a8a; margin:0.5rem 0; }
     </style>
 <style>
 .wa-float{position:fixed;right:1.25rem;bottom:1.25rem;z-index:60;display:flex;align-items:center;gap:.6rem;text-decoration:none;opacity:0;transform:translateY(12px);pointer-events:none;transition:opacity .4s ease,transform .4s ease}
@@ -191,6 +220,7 @@
                 <a href="#roadmap" class="nav-link">The Roadmap</a>
                 <a href="#reality-check" class="nav-link">Reality Check</a>
                 <a href="#reviews" class="nav-link">Reviews</a>
+                <a href="#investment" class="nav-link">Pricing</a>
                 <a href="#consultation-booking" class="nav-link nav-cta">Book Strategy Call</a>
             </div>
             <div class="mobile-menu-button">
@@ -202,6 +232,7 @@
         <div id="mobile-menu" class="mobile-menu">
             <a href="#roadmap" class="mobile-nav-link">The Roadmap</a>
             <a href="#reality-check" class="mobile-nav-link">Reality Check</a>
+            <a href="#investment" class="mobile-nav-link">Pricing</a>
             <a href="#consultation-booking" class="mobile-nav-link" style="color:#1E3A8A; font-weight:700;">Book Strategy Call</a>
         </div>
     </nav>
@@ -384,6 +415,112 @@
                         </div>
                         <div class="review-stars">★★★★★</div>
                         <p class="review-text">"My experience with Colombian Passport, specifically with Camila Ocampo Matiz, Esq. and Mariangela Colmenares Esq., was exceptional. I cannot recall the last time I received such outstanding service from a company. The communication, efficiency, and responsiveness were truly first-class.<br><br>I highly recommend this organization. Thank you both for ensuring such a smooth process. I was especially impressed by your attention to detail and the clarity with which you explained each step in obtaining my Visa."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="why-us" class="content-section section-fade-in" style="background-color: #ffffff;">
+            <div class="container">
+                <h2 class="section-title">Your Trusted Legal Partner</h2>
+                <div class="why-us-grid">
+                    <div class="camila-photo-container">
+                        <img src="https://static.wixstatic.com/media/d8d541_e08ab4e7b0124418a3f5b7e014d1f531~mv2.png" alt="Camila Ocampo, Expert Immigration Lawyer" class="camila-photo" onerror="this.onerror=null;this.src='https://placehold.co/320x400/1e3a8a/FFFFFF?text=Camila+Ocampo';">
+                    </div>
+                    <div class="why-us-content">
+                        <div>
+                            <h3>Meet Camila Ocampo: Your Dedicated Strategist</h3>
+                            <p style="color: #4B5563; margin-bottom: 1rem;">When navigating Colombia's complex immigration landscape, you need more than just a lawyer—you need an expert guide. As the founder of Colombian Passport, Camila represents a new generation of legal leadership.</p>
+                            <ul class="credentials-list">
+                                <li>
+                                    <span class="check">✓</span>
+                                    <span><strong>Elite Education:</strong> Graduate and Specialist in Immigration Law from the prestigious <em>Universidad de los Andes</em>.</span>
+                                </li>
+                                <li>
+                                    <span class="check">✓</span>
+                                    <span><strong>Proven Track Record:</strong> Over 15 years of legal practice, successfully leading the immigration strategy for hundreds of foreign nationals.</span>
+                                </li>
+                                <li>
+                                    <span class="check">✓</span>
+                                    <span><strong>Direct Access:</strong> Your case is not passed off to a junior assistant. You deal directly with the expert at every critical stage.</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="commitment-box">
+                            <h3>Our Commitment to Success</h3>
+                            <p>We only represent cases that meet legal requirements. If your visa is inadmitted, we re-file it with no legal fees, as many times as needed until approval. Each new $56 USD government study fee is paid to the State. Final rejections not covered.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="investment" class="section-padding section-fade-in content-section" style="background-color: #F9FAFB;">
+            <div class="container" style="max-width: 1000px;">
+                <h2 class="section-title">Investment in Your Future Together</h2>
+                <p style="text-align: center; color: #4B5563; max-width: 700px; margin: 0 auto;">One fixed price confirmed on your $80 consultation — credited in full when you hire. Government fees always separate.</p>
+                <div class="plans-intro">
+                    <div class="plan-card hot" style="grid-column:1/-1; width:100%; max-width:640px; margin:0 auto; justify-self:center;">
+                        <div class="plan-name">Spouse Visa</div>
+                        <div class="plan-price">$650 <small>USD</small></div>
+                        <div class="plan-per">USD / Single Payment / Fixed legal fees</div>
+                        <div class="plan-slogan">Always with a senior lawyer, from start to finish.</div>
+                        <div class="plan-best"><strong>Our promise:</strong> if Cancillería inadmits your application, we re-file it with no legal fees, as many times as needed until approval. Each new $56 USD government study fee is paid to the State. Final rejections not covered.</div>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin: 2.5rem auto 0; max-width: 640px;">
+                    <p style="color: #1E3A8A; font-size: 1.25rem; font-weight: 800; margin-bottom: 0.5rem;">Start with an $80 consultation.</p>
+                    <p style="color: #4B5563; font-size: 1rem; margin-bottom: 1.5rem;">Book a 1-on-1 consultation and Camila will validate your marriage certificates and confirm your fixed price in writing — before you pay a single dollar more.</p>
+                    <a href="https://calendar.app.google/PS9iqxJNidkL6LnV7" target="_blank" class="btn btn-blue" style="max-width: 460px; margin-left: auto; margin-right: auto;">Book Your $80 Consultation</a>
+                    <p style="font-size: 0.85rem; color: #6B7280; margin-top: 0.75rem;">The $80 is fully discounted when you hire.</p>
+                </div>
+
+                <div style="overflow-x: auto; border: 1px solid #E5E7EB; border-radius: 1rem; background: #fff; margin-top: 2rem;">
+                <p style="font-size: 0.8rem; color: #6B7280; margin: 0; padding: 0.9rem 1rem 0;">All prices in USD. Cédula government fee in COP.</p>
+                <table style="width: 100%; min-width: 720px; table-layout: fixed; border-collapse: collapse; font-size: 0.82rem;">
+                    <thead>
+                        <tr style="background: #1e3a8a; color: #fff;">
+                            <th style="text-align: left; padding: 12px 14px; width: 60%;">Spouse service</th>
+                            <th style="padding: 12px 10px; width: 40%;">Fixed price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td style="padding: 9px 14px;">Strategy consultation ($80, credited on hire)</td><td align="center"><b>$80</b> · credited on hire</td></tr>
+                        <tr style="background: #F9FAFB;"><td style="padding: 9px 14px;">Document Review & Building</td><td align="center">Included</td></tr>
+                        <tr><td style="padding: 9px 14px;">Legal guidance until file complete</td><td align="center">Included</td></tr>
+                        <tr style="background: #F9FAFB;"><td style="padding: 9px 14px;">Final file prep, SITAC filing, daily tracking</td><td align="center">Included</td></tr>
+                        <tr><td style="padding: 9px 14px;">Official Spanish translations (per page)</td><td align="center"><b>$20</b> per page</td></tr>
+                        <tr style="background: #F9FAFB;"><td style="padding: 9px 14px;">Cancillería requirements + response</td><td align="center">All included</td></tr>
+                        <tr><td style="padding: 9px 14px;">Inadmission & re-application</td><td align="center">Included with no legal fees, until approval</td></tr>
+                        <tr style="background: #F9FAFB;"><td style="padding: 9px 14px;">Visa registration in Migración Colombia</td><td align="center">Included</td></tr>
+                        <tr><td style="padding: 9px 14px;">Cédula de Extranjería appointment</td><td align="center">All included</td></tr>
+                        <tr style="background: #F9FAFB;"><td style="padding: 9px 14px;">Cédula pickup with POA</td><td align="center"><b>$95</b></td></tr>
+                        <tr><td style="padding: 9px 14px;">Beneficiary visa legal fee</td><td align="center"><b>$300</b></td></tr>
+                        <tr style="background: #F9FAFB;"><td style="padding: 9px 14px;">Government fees (Study $56 USD + Issuance M $279 USD + Cédula $294,000 COP)</td><td align="center">Separate</td></tr>
+                        <tr style="background: #1e3a8a; color: #fff;"><td style="padding: 11px 14px;"><b>Price</b></td><td align="center"><b>$650</b></td></tr>
+                    </tbody>
+                </table>
+                </div>
+
+                <div style="margin-top: 4rem;">
+                    <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 2rem; text-align: center; color: #1e3a8a;">Government Costs (Third-Party Payments)</h3>
+                    <div class="grid-3-cols" style="gap: 1.5rem;">
+                        <div class="cost-item">
+                            <p class="cost-title">Visa Study Fee</p>
+                            <p class="cost-val">$56 USD</p>
+                            <p style="font-size: 0.875rem; color: #4B5563;">Paid to the Ministry of Foreign Affairs upon application submission.</p>
+                        </div>
+                        <div class="cost-item">
+                            <p class="cost-title">Visa Issuance Fee</p>
+                            <p class="cost-val">$279 USD</p>
+                            <p style="font-size: 0.875rem; color: #4B5563;">Paid to the Ministry of Foreign Affairs once the visa is approved.</p>
+                        </div>
+                        <div class="cost-item">
+                            <p class="cost-title">Foreigner's ID (Cédula)</p>
+                            <p class="cost-val">$294.000 COP</p>
+                            <p style="font-size: 0.875rem; color: #4B5563;">Paid to Migración Colombia on the day of your ID appointment.</p>
+                        </div>
                     </div>
                 </div>
             </div>
