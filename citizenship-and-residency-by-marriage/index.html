@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script id="pixel-chaty" async="true" src="https://cdn.chaty.app/pixel.js?id=lCpMyBqY"></script>
+    <!-- Chaty removed: replaced by native WhatsApp float -->
     
     <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/7c537ee898ae8548ee317410/script.js"></script>
     
@@ -166,6 +166,15 @@
         .section-fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
         .section-fade-in.visible { opacity: 1; transform: translateY(0); }
     </style>
+<style>
+.wa-float{position:fixed;right:1.25rem;bottom:1.25rem;z-index:60;display:flex;align-items:center;gap:.6rem;text-decoration:none;opacity:0;transform:translateY(12px);pointer-events:none;transition:opacity .4s ease,transform .4s ease}
+.wa-float.show{opacity:1;transform:none;pointer-events:auto}
+.wa-float .wa-tip{background:#1e3a8a;color:#fff;font-family:Arial,Helvetica,sans-serif;font-weight:700;font-size:.82rem;padding:.55rem .9rem;border-radius:.6rem;white-space:nowrap;box-shadow:0 8px 20px -6px rgba(30,58,138,.4)}
+.wa-float .wa-btn{position:relative;width:60px;height:60px;border-radius:50%;background:#22C55E;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 28px -8px rgba(34,197,94,.65);flex-shrink:0}
+.wa-float .wa-btn::after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid #22C55E;animation:waPulse 2s ease-out infinite}
+@keyframes waPulse{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.55);opacity:0}}
+.wa-float .wa-btn svg{width:30px;height:30px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+</style>
 </head>
 <body>
 
@@ -325,9 +334,9 @@
         <section id="reviews" class="reviews-section content-section bg-gray section-fade-in">
             <div class="container">
                 <div style="text-align: center;">
-                    <a href="https://share.google/C2CIZMJ1ttgd3ywJE" target="_blank" class="trust-badge-reviews">
+                    <span class="trust-badge-reviews">
                         ⭐ ⭐ ⭐ ⭐ ⭐ 5.0/5 Rating on Google Reviews
-                    </a>
+                    </span>
                 </div>
                 <h2 class="section-title" style="margin-bottom: 2rem;">Real Success Stories</h2>
                 
@@ -438,5 +447,7 @@
             if(yearSpan) yearSpan.textContent = new Date().getFullYear();
         });
     </script>
+<a id="waFloat" class="wa-float" href="https://wa.me/573223395612?text=Hi%20Camila%2C%20I%20want%20to%20ask%20about%20citizenship%20by%20marriage" target="_blank" rel="noopener" aria-label="WhatsApp"><span class="wa-tip">Questions? Message us</span><span class="wa-btn"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span></a>
+<script>(function(){var b=document.getElementById("waFloat");if(!b)return;var s=function(){b.classList.add("show")};setTimeout(s,4000);window.addEventListener("scroll",function(){if(window.scrollY>400)s();},{passive:true});})();</script>
 </body>
 </html>
