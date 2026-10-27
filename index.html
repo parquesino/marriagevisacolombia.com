@@ -272,9 +272,13 @@
             <a href="#reviews" class="trust-badge-hero">
                 ⭐ ⭐ ⭐ ⭐ ⭐ 5.0/5 Rating on Google Reviews
             </a>
-            <h1>Colombia Marriage & Spouse Visa 2026: Requirements & Legal Filing.</h1>
-            <h2>Expert legal advisory to validate your relationship proof, draft your request letter, and secure your M-Type Visa.</h2>
+            <h1>Colombia Marriage & Spouse Visa 2026: take the 60-second eligibility test.</h1>
+            <h2>If you are in Colombia, your permit can expire while you wait: authorities take up to 5 weeks. Answer 7 quick questions and we will tell you if your case qualifies.</h2>
             
+
+            <div class="hero-ctas-container" style="margin-top: 2rem;">
+                <a href="#form-section" class="btn btn-green">Take the 60-second eligibility test</a>
+            </div>
             <div class="hero-cards-grid">
                 <div class="hero-card">
                     <h3>The Citizenship Pathway</h3>
@@ -294,13 +298,91 @@
                 </div>
             </div>
             
-            <div class="hero-ctas-container" style="margin-top: 2rem;">
-                <a href="#form-section" class="btn btn-green">Check Eligibility & Requirements</a>
-            </div>
         </div>
     </header>
 
     <main>
+        <section id="form-section" class="form-section section-fade-in">
+            <div class="container">
+                <div class="form-container">
+                    <h2>Take the 60-second eligibility test</h2>
+                    <p class="form-intro">7 quick questions · 60 seconds · no documents needed. Answer them and we will tell you if you can still file before your permit expires.</p>
+                    
+                    <form id="spouseVisaForm">
+                        <div class="form-group">
+                            <label class="form-label">1. Is your partner a Colombian citizen with a valid Cédula?</label>
+                            <div class="radio-group">
+                                <input type="radio" id="partnerYes" name="isPartnerColombian" value="yes" class="radio-custom" required><label for="partnerYes" class="radio-custom-label">Yes</label>
+                                <input type="radio" id="partnerNo" name="isPartnerColombian" value="no" class="radio-custom"><label for="partnerNo" class="radio-custom-label">No</label>
+                            </div>
+                            <div class="error-message" id="partnerColombianError"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">2. Are you legally married or in a declared Common-Law Union?</label>
+                            <div class="radio-group">
+                                <input type="radio" id="marriedYes" name="isMarried" value="yes" class="radio-custom" required><label for="marriedYes" class="radio-custom-label">Yes</label>
+                                <input type="radio" id="marriedNo" name="isMarried" value="no" class="radio-custom"><label for="marriedNo" class="radio-custom-label">No</label>
+                            </div>
+                            <div class="error-message" id="marriedError"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">3. Did you get married in Colombia or abroad?</label>
+                            <div class="radio-group">
+                                <input type="radio" id="marriedInColombia" name="marriageLocation" value="colombia" class="radio-custom" required><label for="marriedInColombia" class="radio-custom-label">In Colombia</label>
+                                <input type="radio" id="marriedAbroad" name="marriageLocation" value="abroad" class="radio-custom"><label for="marriedAbroad" class="radio-custom-label">Abroad</label>
+                            </div>
+                            <div class="error-message" id="locationError"></div>
+                        </div>
+
+                        <div id="registrationQuestion" class="form-group hidden" style="display: none;">
+                            <label class="form-label">4. If you married abroad, have you registered your marriage in Colombia?</label>
+                            <div class="radio-group">
+                                <input type="radio" id="registeredYes" name="isRegistered" value="yes" class="radio-custom"><label for="registeredYes" class="radio-custom-label">Yes</label>
+                                <input type="radio" id="registeredNo" name="isRegistered" value="no" class="radio-custom"><label for="registeredNo" class="radio-custom-label">No</label>
+                                <input type="radio" id="registeredUnsure" name="isRegistered" value="unsure" class="radio-custom"><label for="registeredUnsure" class="radio-custom-label">I'm not sure</label>
+                            </div>
+                            <div class="error-message" id="registeredError"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="applicationCountry" class="form-label">5. Where do you plan to apply for the visa from?</label>
+                            <select id="applicationCountry" name="applicationCountry" class="form-input" required>
+                              <option value="" disabled selected>Select an option</option>
+                              <option value="colombia">From within Colombia</option>
+                              <option value="residence">From my country of residence</option>
+                              <option value="home">From my home country</option>
+                            </select>
+                            <div class="error-message" id="appCountryError"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">6. Does the foreign spouse have any criminal or judicial records?</label>
+                            <div class="radio-group">
+                                <input type="radio" id="criminalNo" name="criminalRecord" value="no" class="radio-custom" required><label for="criminalNo" class="radio-custom-label">No</label>
+                                <input type="radio" id="criminalYes" name="criminalRecord" value="yes" class="radio-custom"><label for="criminalYes" class="radio-custom-label">Yes</label>
+                            </div>
+                            <div class="error-message" id="criminalError"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">7. Do you plan to live together in Colombia?</label>
+                            <div class="radio-group">
+                                <input type="radio" id="liveTogetherYes" name="liveTogether" value="yes" class="radio-custom" required><label for="liveTogetherYes" class="radio-custom-label">Yes</label>
+                                <input type="radio" id="liveTogetherNo" name="liveTogether" value="no" class="radio-custom"><label for="liveTogetherNo" class="radio-custom-label">No</label>
+                            </div>
+                            <div class="error-message" id="liveError"></div>
+                        </div>
+
+                        <button type="submit" id="submitSpouseVisaBtn" class="btn btn-blue">See my result (60 seconds)</button>
+                        <div id="formErrorMessage" class="form-global-error">Please fill in all required fields marked in red.</div>
+                    </form>
+                    <div id="resultArea"></div>
+                </div>
+            </div>
+        </section>
+
         <section id="faq" class="content-section" style="background-color: #ffffff;">
             <div class="container">
                 <h2 class="section-title">Visa Requirements, Costs & FAQ</h2>
@@ -391,87 +473,6 @@
                         <h3>How long does the entire process take?</h3>
                         <p>Once all documents are gathered and the application is submitted, the review period by the Ministry of Foreign Affairs is typically 3 to 5 weeks. Document collection (apostilles, translations, registrations) can add additional time to this timeline.</p>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="form-section" class="form-section section-fade-in">
-            <div class="container">
-                <div class="form-container">
-                    <h2>Check Eligibility & Requirements</h2>
-                    <p class="form-intro">Answer these quick questions for a preliminary assessment of your case.</p>
-                    
-                    <form id="spouseVisaForm">
-                        <div class="form-group">
-                            <label class="form-label">1. Is your partner a Colombian citizen with a valid Cédula?</label>
-                            <div class="radio-group">
-                                <input type="radio" id="partnerYes" name="isPartnerColombian" value="yes" class="radio-custom" required><label for="partnerYes" class="radio-custom-label">Yes</label>
-                                <input type="radio" id="partnerNo" name="isPartnerColombian" value="no" class="radio-custom"><label for="partnerNo" class="radio-custom-label">No</label>
-                            </div>
-                            <div class="error-message" id="partnerColombianError"></div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="form-label">2. Are you legally married or in a declared Common-Law Union?</label>
-                            <div class="radio-group">
-                                <input type="radio" id="marriedYes" name="isMarried" value="yes" class="radio-custom" required><label for="marriedYes" class="radio-custom-label">Yes</label>
-                                <input type="radio" id="marriedNo" name="isMarried" value="no" class="radio-custom"><label for="marriedNo" class="radio-custom-label">No</label>
-                            </div>
-                            <div class="error-message" id="marriedError"></div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label class="form-label">3. Did you get married in Colombia or abroad?</label>
-                            <div class="radio-group">
-                                <input type="radio" id="marriedInColombia" name="marriageLocation" value="colombia" class="radio-custom" required><label for="marriedInColombia" class="radio-custom-label">In Colombia</label>
-                                <input type="radio" id="marriedAbroad" name="marriageLocation" value="abroad" class="radio-custom"><label for="marriedAbroad" class="radio-custom-label">Abroad</label>
-                            </div>
-                            <div class="error-message" id="locationError"></div>
-                        </div>
-
-                        <div id="registrationQuestion" class="form-group hidden" style="display: none;">
-                            <label class="form-label">4. If you married abroad, have you registered your marriage in Colombia?</label>
-                            <div class="radio-group">
-                                <input type="radio" id="registeredYes" name="isRegistered" value="yes" class="radio-custom"><label for="registeredYes" class="radio-custom-label">Yes</label>
-                                <input type="radio" id="registeredNo" name="isRegistered" value="no" class="radio-custom"><label for="registeredNo" class="radio-custom-label">No</label>
-                                <input type="radio" id="registeredUnsure" name="isRegistered" value="unsure" class="radio-custom"><label for="registeredUnsure" class="radio-custom-label">I'm not sure</label>
-                            </div>
-                            <div class="error-message" id="registeredError"></div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="applicationCountry" class="form-label">5. Where do you plan to apply for the visa from?</label>
-                            <select id="applicationCountry" name="applicationCountry" class="form-input" required>
-                              <option value="" disabled selected>Select an option</option>
-                              <option value="colombia">From within Colombia</option>
-                              <option value="residence">From my country of residence</option>
-                              <option value="home">From my home country</option>
-                            </select>
-                            <div class="error-message" id="appCountryError"></div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="form-label">6. Does the foreign spouse have any criminal or judicial records?</label>
-                            <div class="radio-group">
-                                <input type="radio" id="criminalNo" name="criminalRecord" value="no" class="radio-custom" required><label for="criminalNo" class="radio-custom-label">No</label>
-                                <input type="radio" id="criminalYes" name="criminalRecord" value="yes" class="radio-custom"><label for="criminalYes" class="radio-custom-label">Yes</label>
-                            </div>
-                            <div class="error-message" id="criminalError"></div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label class="form-label">7. Do you plan to live together in Colombia?</label>
-                            <div class="radio-group">
-                                <input type="radio" id="liveTogetherYes" name="liveTogether" value="yes" class="radio-custom" required><label for="liveTogetherYes" class="radio-custom-label">Yes</label>
-                                <input type="radio" id="liveTogetherNo" name="liveTogether" value="no" class="radio-custom"><label for="liveTogetherNo" class="radio-custom-label">No</label>
-                            </div>
-                            <div class="error-message" id="liveError"></div>
-                        </div>
-
-                        <button type="submit" id="submitSpouseVisaBtn" class="btn btn-blue">Check Eligibility & Requirements</button>
-                        <div id="formErrorMessage" class="form-global-error">Please fill in all required fields marked in red.</div>
-                    </form>
-                    <div id="resultArea"></div>
                 </div>
             </div>
         </section>

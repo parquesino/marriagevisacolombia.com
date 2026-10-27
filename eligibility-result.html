@@ -115,6 +115,14 @@
 
             var messages = (stored && stored.messages) || [];
 
+            // WhatsApp CTA con el resultado del formulario (como pensionado/nómada):
+            // envíanos por WhatsApp el resultado para ayudarte con una propuesta.
+            var waText = 'Hello Camila, I just completed the Marriage/Spouse Visa eligibility check (' + (status || 'no status') + ').\n\n'
+                + (messages.length ? messages.join('\n') : 'No additional notes.')
+                + ((stored && stored.applicationCountry) ? '\nApplying from: ' + stored.applicationCountry : '');
+            var waLink = 'https://wa.me/573223395612?text=' + encodeURIComponent(waText);
+            var waCta = '<div style="margin-top:1rem;"><a href="' + waLink + '" target="_blank" class="btn btn-green" style="background-color:#22C55E;">Send us your result on WhatsApp so we can help you with a proposal</a></div>';
+
             var card = document.getElementById('resultCard');
             var content = '';
             var pageTitle = '';
@@ -133,7 +141,8 @@
                     + '<p style="color:#14532d;font-weight:700;">Don\u2019t let paperwork stress your relationship.</p>'
                     + '<p style="color:#166534;font-size:1rem;">Book a 1-on-1 Strategy Call for $80 USD to map out your timeline and let us handle the system.</p>'
                     + '<p><span class="credit-badge">\u2728 The $80 fee is 100% credited when you hire.</span></p>'
-                    + '<div style="margin-top:1.5rem;"><a href="https://calendar.app.google/PS9iqxJNidkL6LnV7" target="_blank" class="btn btn-green">Book $80 Strategy Call</a></div>';
+                    + '<div style="margin-top:1.5rem;"><a href="https://calendar.app.google/PS9iqxJNidkL6LnV7" target="_blank" class="btn btn-green">Book $80 Strategy Call</a></div>'
+                    + waCta;
             } else if (status === 'more-info') {
                 card.className = 'result-card result-more-info';
                 pageTitle = 'Your case needs review | Marriage Visa Colombia';
@@ -145,7 +154,8 @@
                     + '<p>Based on your answers, there are some points that need to be reviewed by an expert before proceeding:</p>'
                     + '<ul>' + items + '</ul>'
                     + '<p style="font-weight:600;">Book a Strategy Call to analyze your situation in detail and define the best legal path.</p>'
-                    + '<a href="https://calendar.app.google/PS9iqxJNidkL6LnV7" target="_blank" class="btn btn-amber">Book $80 Strategy Call</a>';
+                    + '<a href="https://calendar.app.google/PS9iqxJNidkL6LnV7" target="_blank" class="btn btn-amber">Book $80 Strategy Call</a>'
+                    + waCta;
             } else if (status === 'not-qualified') {
                 card.className = 'result-card result-not-qualified';
                 pageTitle = 'Important information about your case | Marriage Visa Colombia';
@@ -157,7 +167,8 @@
                     + '<p>Thank you for your answers. Based on the information provided, we have identified some points that do not meet the fundamental requirements for the Spouse Visa:</p>'
                     + '<ul>' + itemsNQ + '</ul>'
                     + '<p>If your situation changes or you believe there has been a misunderstanding, please feel free to explore other visa options.</p>'
-                    + '<a href="https://www.abogadosdemigracion.com.co" target="_blank" class="btn btn-outline" style="border-color:#991B1B;color:#991B1B;">Explore Other Visas</a>';
+                    + '<a href="https://www.abogadosdemigracion.com.co" target="_blank" class="btn btn-outline" style="border-color:#991B1B;color:#991B1B;">Explore Other Visas</a>'
+                    + waCta;
             } else {
                 // Acceso directo sin completar el formulario
                 card.className = 'result-card';
