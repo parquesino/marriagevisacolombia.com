@@ -70,6 +70,16 @@
         .hero-card p { font-size: 0.875rem; margin: 0; }
         @media (min-width: 640px) { .hero-section h1 { font-size: 3rem; } .hero-cards-grid { grid-template-columns: repeat(2, 1fr); } }
         @media (min-width: 768px) { .hero-section h1 { font-size: 3.5rem; } .hero-cards-grid { grid-template-columns: repeat(4, 1fr); } }
+        .hero-eyebrow { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.18em; color: #BFDBFE; margin: 0 0 1rem 0; }
+        .hero-trust { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 0.75rem; margin: 0 0 2rem 0; font-size: 0.875rem; font-weight: 600; color: #E5E7EB; }
+        .hero-trust .trust-badge-hero { margin-bottom: 0; }
+        #form-section { scroll-margin-top: 6rem; }
+        .quiz-progress { max-width: 32rem; margin: 0 auto 2rem auto; text-align: left; }
+        .quiz-progress-label { font-size: 0.9rem; font-weight: 700; color: #1E3A8A; margin-bottom: 0.5rem; }
+        .quiz-progress-track { height: 8px; background-color: #E5E7EB; border-radius: 999px; overflow: hidden; }
+        .quiz-progress-fill { height: 100%; width: 0%; background-color: #2563EB; border-radius: 999px; transition: width 0.3s ease; }
+        .form-container .radio-group { display: flex; flex-direction: column; gap: 0.75rem; }
+        .form-container .radio-custom-label { display: block; width: 100%; box-sizing: border-box; padding: 1rem 1.25rem; font-size: 1.05rem; }
         @media (max-width: 639px) { .hero-cards-grid { display: none; } }
 
         /* --- BOTONES Y FORMULARIOS --- */
@@ -247,48 +257,22 @@
 
     <header class="hero-section section-fade-in">
         <div class="container">
-            <a href="#reviews" class="trust-badge-hero">
+            
+            <p class="hero-eyebrow">COLOMBIAN SPOUSE VISA</p>
+            <h1>Check If You Qualify for a Colombian Spouse Visa</h1>
+            <h2>Married to a Colombian citizen? Answer 7 quick questions to get a preliminary assessment of your situation before starting the visa process.</h2>
+            <div class="hero-trust"><a href="#reviews" class="trust-badge-hero">
                 ⭐ ⭐ ⭐ ⭐ ⭐ 5.0/5 Rating on Google Reviews
-            </a>
-            <h1>Colombia Marriage & Spouse Visa 2026: take the 60-second eligibility test.</h1>
-            <h2>If you are in Colombia, your permit can expire while you wait: authorities take up to 5 weeks. Answer 7 quick questions and we will tell you if your case qualifies.</h2>
-            
+            </a><span>✓ Experienced immigration lawyers</span></div>
 
-            <div class="hero-ctas-container" style="margin-top: 2rem;">
-                <a href="#form-section" class="btn btn-green">Take the 60-second eligibility test</a>
-            </div>
-            <div class="hero-cards-grid">
-                <div class="hero-card">
-                    <h3>The Citizenship Pathway</h3>
-                    <p>We map out your exact 3 to 5-year legal roadmap from your M-Visa to obtaining your Colombian Passport.</p>
-                </div>
-                <div class="hero-card">
-                    <h3>Marriage vs. Common-Law</h3>
-                    <p>We evaluate your relationship to determine the fastest, safest legal route to formalize your union.</p>
-                </div>
-                <div class="hero-card">
-                    <h3>Foreign Validations</h3>
-                    <p>Married in the US/Europe? We guide you through the mandatory apostille, translation, and local registration process.</p>
-                </div>
-                <div class="hero-card">
-                    <h3>Protect Your Tourist Days</h3>
-                    <p>Avoid confusing 'requerimientos' that delay your process. We ensure a perfect filing before your tourist permit expires.</p>
-                </div>
-            </div>
-            
-        </div>
-    </header>
-
-    <main>
-        <section id="form-section" class="form-section section-fade-in">
-            <div class="container">
-                <div class="form-container">
-                    <h2>Take the 60-second eligibility test</h2>
-                    <p class="form-intro">7 quick questions · 60 seconds · no documents needed. Answer them and we will tell you if you can still file before your permit expires.</p>
+<div id="form-section" class="form-container">
+                    <h2>Start Your Eligibility Check</h2>
+                    <p class="form-intro">60 seconds · no documents needed.</p>
+                    <div class="quiz-progress"><div class="quiz-progress-label" id="quizProgressLabel">Question 1 of 7</div><div class="quiz-progress-track"><div class="quiz-progress-fill" id="quizProgressFill"></div></div></div>
                     
                     <form id="spouseVisaForm">
                         <div class="form-group">
-                            <label class="form-label">1. Is your partner a Colombian citizen with a valid Cédula?</label>
+                            <label class="form-label">1. Is your spouse a Colombian citizen with a valid Cédula?</label>
                             <div class="radio-group">
                                 <input type="radio" id="partnerYes" name="isPartnerColombian" value="yes" class="radio-custom" required><label for="partnerYes" class="radio-custom-label">Yes</label>
                                 <input type="radio" id="partnerNo" name="isPartnerColombian" value="no" class="radio-custom"><label for="partnerNo" class="radio-custom-label">No</label>
@@ -297,7 +281,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="form-label">2. Are you legally married or in a declared Common-Law Union?</label>
+                            <label class="form-label">2. Are you legally married?</label>
                             <div class="radio-group">
                                 <input type="radio" id="marriedYes" name="isMarried" value="yes" class="radio-custom" required><label for="marriedYes" class="radio-custom-label">Yes</label>
                                 <input type="radio" id="marriedNo" name="isMarried" value="no" class="radio-custom"><label for="marriedNo" class="radio-custom-label">No</label>
@@ -358,17 +342,38 @@
                     </form>
                     <div id="resultArea"></div>
                 </div>
+            <div class="hero-cards-grid">
+                <div class="hero-card">
+                    <h3>The Citizenship Pathway</h3>
+                    <p>We map out your exact 3 to 5-year legal roadmap from your M-Visa to obtaining your Colombian Passport.</p>
+                </div>
+                <div class="hero-card">
+                    <h3>Marriage Validation</h3>
+                    <p>We verify your marriage certificate and registration so Cancillería accepts your filing without delays.</p>
+                </div>
+                <div class="hero-card">
+                    <h3>Foreign Validations</h3>
+                    <p>Married in the US/Europe? We guide you through the mandatory apostille, translation, and local registration process.</p>
+                </div>
+                <div class="hero-card">
+                    <h3>Protect Your Tourist Days</h3>
+                    <p>Avoid confusing 'requerimientos' that delay your process. We ensure a perfect filing before your tourist permit expires.</p>
+                </div>
             </div>
-        </section>
+            
+        </div>
+    </header>
 
-        <section id="faq" class="content-section" style="background-color: #ffffff;">
+    <main>
+
+<section id="faq" class="content-section" style="background-color: #ffffff;">
             <div class="container">
                 <h2 class="section-title">Visa Requirements, Costs & FAQ</h2>
                 <div class="faq-container">
                     
                     <div class="faq-item requirements-block">
                         <h3>Main Requirements for the M-Type Spouse Visa</h3>
-                        <p style="margin-bottom: 1rem; color: #4B5563;">To apply for the Spouse/Partner Visa, you must provide the following documentation:</p>
+                        <p style="margin-bottom: 1rem; color: #4B5563;">To apply for the Spouse Visa, you must provide the following documentation:</p>
                         <div class="req-list-container">
                             <div class="req-list-item">
                                 <div class="req-icon-box">
@@ -386,7 +391,7 @@
                                 </div>
                                 <div class="req-content">
                                     <strong>Official Relationship Certificate</strong>
-                                    <p>An authentic, true copy of the Civil Marriage Certificate (both sides) or the Public Deed (for Common-Law Unions). <strong>Note:</strong> It must have been issued no more than 3 months prior to the application.</p>
+                                    <p>An authentic, true copy of the Civil Marriage Certificate (both sides). <strong>Note:</strong> It must have been issued no more than 3 months prior to the application.</p>
                                 </div>
                             </div>
                             
@@ -417,19 +422,14 @@
                         <p>No, Colombian citizenship by marriage is not automatic. However, marriage significantly accelerates the process. The M-Type Spouse Visa is your first mandatory step. After holding this visa for 2 to 3 years, you can apply for a Resident Visa (R-Type). Once you are a resident, you will be eligible to apply for a Colombian passport much faster than standard applicants.</p>
                     </div>
 
-                    <div class="faq-item">
-                        <h3>What is the difference between a Spouse and a Permanent Partner?</h3>
-                        <p>Both categories grant the exact same visa rights under the M-Type visa. "Spouse" (Cónyuge) applies to couples who are legally married (Civil Marriage). "Permanent Partner" (Compañero Permanente) applies to couples who have officially declared a Common-Law Union (Unión Marital de Hecho) before a notary or judge.</p>
-                    </div>
-
-                    <div class="faq-item">
+<div class="faq-item">
                         <h3>Do same-sex couples qualify for the Colombian Spouse Visa?</h3>
-                        <p>Yes, absolutely. Colombia fully recognizes same-sex civil marriages and common-law unions. You have the exact same legal rights and follow the same procedures to apply for the M-Type Partner Visa.</p>
+                        <p>Yes, absolutely. Colombia fully recognizes same-sex civil marriages. You have the exact same legal rights and follow the same procedures to apply for the M-Type Spouse Visa.</p>
                     </div>
 
                     <div class="faq-item">
                         <h3>What is the "Relationship Request Letter" or "Poder Especial"?</h3>
-                        <p>The Ministry of Foreign Affairs requires a formal, notarized letter signed by the Colombian partner requesting the visa for the foreign spouse. If applying from abroad, a specific "Poder Especial" (Special Power of Attorney) must be authenticated before a Colombian Consul.</p>
+                        <p>The Ministry of Foreign Affairs requires a formal, notarized letter signed by the Colombian spouse requesting the visa for the foreign spouse. If applying from abroad, a specific "Poder Especial" (Special Power of Attorney) must be authenticated before a Colombian Consul.</p>
                     </div>
 
                     <div class="faq-item">
@@ -439,7 +439,7 @@
 
                     <div class="faq-item">
                         <h3>Does Colombia offer a Fiancé Visa?</h3>
-                        <p>Colombia does not have a specific "Fiancé" visa category. To apply for a partner visa, you must either be legally married or have a legally declared Common-Law Union. During our $80 Strategy Call, we can advise you on the fastest route to formalize your relationship in Colombia.</p>
+                        <p>Colombia does not have a specific "Fiancé" visa category. To apply for a spouse visa, you must be legally married. During our $80 Strategy Call, we can advise you on the fastest route to formalize your relationship in Colombia.</p>
                     </div>
 
                     <div class="faq-item">
@@ -734,11 +734,11 @@
 
                     if (data.isPartnerColombian === 'no') {
                         status = 'NOT_QUALIFIED';
-                        messages.push('Your partner must be a Colombian citizen for this visa.');
+                        messages.push('Your spouse must be a Colombian citizen for this visa.');
                     }
                     if (data.isMarried === 'no') {
                         status = 'NOT_QUALIFIED';
-                        messages.push('You must be legally married or have a declared union to apply for a spouse visa.');
+                        messages.push('You must be legally married to apply for a spouse visa.');
                     }
                      if (data.liveTogether === 'no') {
                         status = 'NOT_QUALIFIED';
@@ -858,5 +858,34 @@
     </script>
 <a id="waFloat" class="wa-float" href="https://wa.me/573223395612?text=Hi%20Camila%2C%20I%20want%20the%20Spouse%20Visa" target="_blank" rel="noopener" aria-label="WhatsApp"><span class="wa-tip">Questions? Message us</span><span class="wa-btn"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span></a>
 <script>(function(){var b=document.getElementById("waFloat");if(!b)return;var s=function(){b.classList.add("show")};setTimeout(s,4000);window.addEventListener("scroll",function(){if(window.scrollY>400)s();},{passive:true});})();</script>
+<script>
+        (function () {
+            var form = document.getElementById('spouseVisaForm');
+            if (!form) return;
+            var lbl = document.getElementById('quizProgressLabel');
+            var bar = document.getElementById('quizProgressFill');
+            var names = ['isPartnerColombian', 'isMarried', 'marriageLocation', 'isRegistered', 'applicationCountry', 'criminalRecord', 'liveTogether'];
+            function update() {
+                var answered = 0, total = 0, first = -1;
+                names.forEach(function (n, i) {
+                    var field = form.querySelector('[name="' + n + '"]');
+                    if (!field) return;
+                    var group = field.closest('.form-group');
+                    if (group && (group.style.display === 'none' || group.classList.contains('hidden'))) return;
+                    total++;
+                    var done = (field.type === 'radio' || field.type === 'checkbox')
+                        ? !!form.querySelector('[name="' + n + '"]:checked')
+                        : !!field.value;
+                    if (done) answered++;
+                    else if (first < 0) first = i + 1;
+                });
+                if (first < 0) first = Math.max(total, 1);
+                if (lbl) lbl.textContent = 'Question ' + first + ' of 7';
+                if (bar) bar.style.width = Math.round(answered / Math.max(total, 1) * 100) + '%';
+            }
+            form.addEventListener('change', update);
+            update();
+        })();
+    </script>
 </body>
 </html>
