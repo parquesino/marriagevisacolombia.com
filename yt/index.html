@@ -81,6 +81,7 @@
         .form-container .radio-group { display: flex; flex-direction: column; gap: 0.75rem; }
         .form-container .radio-custom-label { display: block; width: 100%; box-sizing: border-box; padding: 1rem 1.25rem; font-size: 1.05rem; }
         @media (max-width: 639px) { .hero-cards-grid { display: none; } }
+        #form-section.form-container { margin: 0 auto 3rem auto; }
 
         /* --- BOTONES Y FORMULARIOS --- */
         .btn { display: inline-flex; justify-content: center; align-items: center; border-radius: 0.5rem; font-weight: 600; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); transition: transform 0.2s, background-color 0.2s; text-decoration: none; cursor: pointer; border: none; text-align: center; }
@@ -267,7 +268,7 @@
 
 <div id="form-section" class="form-container">
                     <h2>Start Your Eligibility Check</h2>
-                    <p class="form-intro">60 seconds · no documents needed.</p>
+                    <p class="form-intro">No documents needed.</p>
                     <div class="quiz-progress"><div class="quiz-progress-label" id="quizProgressLabel">Question 1 of 7</div><div class="quiz-progress-track"><div class="quiz-progress-fill" id="quizProgressFill"></div></div></div>
                     
                     <form id="spouseVisaForm">
@@ -337,7 +338,7 @@
                             <div class="error-message" id="liveError"></div>
                         </div>
 
-                        <button type="submit" id="submitSpouseVisaBtn" class="btn btn-blue">See my result (60 seconds)</button>
+                        <button type="submit" id="submitSpouseVisaBtn" class="btn btn-blue">See my result</button>
                         <div id="formErrorMessage" class="form-global-error">Please fill in all required fields marked in red.</div>
                     </form>
                     <div id="resultArea"></div>

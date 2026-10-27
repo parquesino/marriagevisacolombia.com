@@ -75,6 +75,7 @@
         .hero-card p { font-size: 0.875rem; margin: 0; }
         @media (min-width: 640px) { .hero-section h1 { font-size: 3rem; } .hero-cards-grid { grid-template-columns: repeat(2, 1fr); } }
         @media (min-width: 768px) { .hero-section h1 { font-size: 3.5rem; } .hero-cards-grid { grid-template-columns: repeat(4, 1fr); } }
+        #form-section.form-container { margin: 0 auto 3rem auto; }
         .hero-eyebrow { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.18em; color: #BFDBFE; margin: 0 0 1rem 0; }
         .hero-trust { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 0.75rem; margin: 0 0 2rem 0; font-size: 0.875rem; font-weight: 600; color: #E5E7EB; }
         .hero-trust .trust-badge-hero { margin-bottom: 0; }
@@ -289,7 +290,7 @@
 
 <div id="form-section" class="form-container">
                     <h2>Start Your Eligibility Check</h2>
-                    <p class="form-intro">60 seconds · no documents needed.</p>
+                    <p class="form-intro">No documents needed.</p>
                     <div class="quiz-progress"><div class="quiz-progress-label" id="quizProgressLabel">Question 1 of 7</div><div class="quiz-progress-track"><div class="quiz-progress-fill" id="quizProgressFill"></div></div></div>
                     
                     <form id="spouseVisaForm">
@@ -359,7 +360,7 @@
                             <div class="error-message" id="liveError"></div>
                         </div>
 
-                        <button type="submit" id="submitSpouseVisaBtn" class="btn btn-blue">See my result (60 seconds)</button>
+                        <button type="submit" id="submitSpouseVisaBtn" class="btn btn-blue">See my result</button>
                         <div id="formErrorMessage" class="form-global-error">Please fill in all required fields marked in red.</div>
                     </form>
                     <div id="resultArea"></div>
