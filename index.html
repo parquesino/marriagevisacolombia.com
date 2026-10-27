@@ -75,6 +75,11 @@
         .hero-card p { font-size: 0.875rem; margin: 0; }
         @media (min-width: 640px) { .hero-section h1 { font-size: 3rem; } .hero-cards-grid { grid-template-columns: repeat(2, 1fr); } }
         @media (min-width: 768px) { .hero-section h1 { font-size: 3.5rem; } .hero-cards-grid { grid-template-columns: repeat(4, 1fr); } }
+        #spouseVisaForm.wizard-on .form-group { display: none; }
+        #spouseVisaForm.wizard-on .form-group.active { display: block; animation: quizIn 0.3s ease; }
+        @keyframes quizIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+        .wizard-back { background: none; border: none; color: #2563EB; font-weight: 600; cursor: pointer; font-size: 1rem; padding: 0.75rem 0; display: block; }
+        .wizard-back:hover { text-decoration: underline; }
         .hero-eyebrow { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.18em; color: #BFDBFE; margin: 0 0 1rem 0; }
         .hero-trust { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 0.75rem; margin: 0 0 2rem 0; font-size: 0.875rem; font-weight: 600; color: #E5E7EB; }
         .hero-trust .trust-badge-hero { margin-bottom: 0; }
@@ -359,7 +364,8 @@
                             <div class="error-message" id="liveError"></div>
                         </div>
 
-                        <button type="submit" id="submitSpouseVisaBtn" class="btn btn-blue">See my result (60 seconds)</button>
+                        <button type="button" id="wizardBack" class="wizard-back" style="display:none;">← Back</button>
+                    <button type="submit" id="submitSpouseVisaBtn" class="btn btn-blue">See my result (60 seconds)</button>
                         <div id="formErrorMessage" class="form-global-error">Please fill in all required fields marked in red.</div>
                     </form>
                     <div id="resultArea"></div>
@@ -905,29 +911,86 @@
         (function () {
             var form = document.getElementById('spouseVisaForm');
             if (!form) return;
+            var back = document.getElementById('wizardBack');
+            var submit = document.getElementById('submitSpouseVisaBtn');
             var lbl = document.getElementById('quizProgressLabel');
             var bar = document.getElementById('quizProgressFill');
-            var names = ['isPartnerColombian', 'isMarried', 'marriageLocation', 'isRegistered', 'applicationCountry', 'criminalRecord', 'liveTogether'];
-            function update() {
-                var answered = 0, total = 0, first = -1;
-                names.forEach(function (n, i) {
-                    var field = form.querySelector('[name="' + n + '"]');
-                    if (!field) return;
-                    var group = field.closest('.form-group');
-                    if (group && (group.style.display === 'none' || group.classList.contains('hidden'))) return;
-                    total++;
-                    var done = (field.type === 'radio' || field.type === 'checkbox')
-                        ? !!form.querySelector('[name="' + n + '"]:checked')
-                        : !!field.value;
-                    if (done) answered++;
-                    else if (first < 0) first = i + 1;
+            var order = ['isPartnerColombian', 'isMarried', 'marriageLocation', 'isRegistered', 'applicationCountry', 'criminalRecord', 'liveTogether'];
+            var ERRTXT = { applicationCountry: 'Please select where you plan to apply from.' };
+            var ERRID = { isPartnerColombian: 'partnerColombianError', isMarried: 'marriedError', marriageLocation: 'locationError', isRegistered: 'registeredError', applicationCountry: 'appCountryError', criminalRecord: 'criminalError', liveTogether: 'liveError' };
+            var cur = 0;
+            function groups() { return Array.prototype.slice.call(form.querySelectorAll('.form-group')); }
+            function visible() {
+                return groups().filter(function (g) {
+                    return g.style.display !== 'none' && !g.classList.contains('hidden');
                 });
-                if (first < 0) first = Math.max(total, 1);
-                if (lbl) lbl.textContent = 'Question ' + first + ' of 7';
-                if (bar) bar.style.width = Math.round(answered / Math.max(total, 1) * 100) + '%';
             }
-            form.addEventListener('change', update);
-            update();
+            function fieldOf(g) { return g.querySelector('input[name], select[name]'); }
+            function isAnswered(g) {
+                var f = fieldOf(g);
+                if (!f) return true;
+                if (f.type === 'radio' || f.type === 'checkbox') return !!form.querySelector('[name="' + f.name + '"]:checked');
+                return !!f.value;
+            }
+            function validateStep(g) {
+                var f = fieldOf(g);
+                if (!f) return true;
+                var ok;
+                if (f.type === 'select-one') {
+                    ok = !!f.value;
+                    f.classList.toggle('border-red-500', !ok);
+                } else {
+                    ok = !!form.querySelector('[name="' + f.name + '"]:checked');
+                    var labels = form.querySelectorAll('[name="' + f.name + '"] + label');
+                    for (var i = 0; i < labels.length; i++) labels[i].classList.toggle('border-red-500', !ok);
+                }
+                var el = document.getElementById(ERRID[f.name]);
+                if (el) el.textContent = ok ? '' : (ERRTXT[f.name] || 'Please select an option.');
+                return ok;
+            }
+            function paint(scroll) {
+                var vis = visible();
+                if (cur > vis.length - 1) cur = vis.length - 1;
+                if (cur < 0) cur = 0;
+                groups().forEach(function (g) {
+                    var on = vis[cur] === g;
+                    g.classList.toggle('active', on);
+                    g.style.display = on ? '' : 'none';
+                });
+                var done = vis.filter(isAnswered).length;
+                if (lbl) lbl.textContent = 'Question ' + Math.min(cur + 1, vis.length) + ' of ' + vis.length;
+                if (bar) bar.style.width = Math.round(done / Math.max(vis.length, 1) * 100) + '%';
+                if (back) back.style.display = cur > 0 ? '' : 'none';
+                if (submit) submit.style.display = (done === vis.length && vis.length > 0) ? '' : 'none';
+                if (scroll && vis[cur]) vis[cur].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+            form.addEventListener('change', function (e) {
+                var g = e.target.closest ? e.target.closest('.form-group') : null;
+                if (!g || !form.contains(g)) return;
+                if (!validateStep(g)) return;
+                if (e.target.name === 'marriageLocation') {
+                    var reg = document.getElementById('registrationQuestion');
+                    if (reg) {
+                        if (e.target.value === 'abroad') { reg.style.display = 'block'; reg.classList.remove('hidden'); }
+                        else {
+                            reg.style.display = 'none'; reg.classList.add('hidden');
+                            var checked = reg.querySelectorAll('input:checked');
+                            for (var i = 0; i < checked.length; i++) checked[i].checked = false;
+                            var re = document.getElementById('registeredError');
+                            if (re) re.textContent = '';
+                        }
+                    }
+                }
+                var vis = visible();
+                var idx = vis.indexOf(g);
+                setTimeout(function () {
+                    if (idx >= 0 && idx < vis.length - 1) { cur = idx + 1; paint(true); }
+                    else paint(false);
+                }, 240);
+            });
+            if (back) back.addEventListener('click', function () { if (cur > 0) { cur--; paint(true); } });
+            form.classList.add('wizard-on');
+            paint(false);
         })();
     </script>
 </body>
