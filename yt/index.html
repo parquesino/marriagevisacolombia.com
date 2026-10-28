@@ -941,7 +941,7 @@
                 });
                 var done = vis.filter(fieldAnswered).length;
                 var idx = vis.indexOf(cur);
-                if (lbl) lbl.textContent = 'Question ' + (idx + 1) + ' of ' + vis.length;
+                if (lbl) lbl.textContent = 'Question ' + (ORDER.indexOf(cur) + 1) + ' of 7';
                 if (bar) bar.style.width = Math.round(done / Math.max(vis.length, 1) * 100) + '%';
                 var last = idx === vis.length - 1;
                 var showBack = idx > 0;
