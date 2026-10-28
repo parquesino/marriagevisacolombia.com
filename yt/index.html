@@ -742,7 +742,14 @@
                     const data = Object.fromEntries(formData.entries());
 
                     let status = 'QUALIFIED';
-                    let messages = [];
+                    let messages = [
+                        'Colombian spouse with valid Cedula: ' + data.isPartnerColombian,
+                        'Legally married: ' + data.isMarried,
+                        'Marriage location: ' + data.marriageLocation + (data.marriageLocation === 'abroad' ? ', registered in Colombia: ' + (data.isRegistered || 'unsure') : ''),
+                        'Applying from: ' + (data.applicationCountry || ''),
+                        'Criminal record: ' + data.criminalRecord,
+                        'Plans to live together in Colombia: ' + data.liveTogether
+                    ];
 
                     if (data.isPartnerColombian === 'no') {
                         status = 'NOT_QUALIFIED';
