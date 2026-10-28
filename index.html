@@ -75,6 +75,11 @@
         .hero-card p { font-size: 0.875rem; margin: 0; }
         @media (min-width: 640px) { .hero-section h1 { font-size: 3rem; } .hero-cards-grid { grid-template-columns: repeat(2, 1fr); } }
         @media (min-width: 768px) { .hero-section h1 { font-size: 3.5rem; } .hero-cards-grid { grid-template-columns: repeat(4, 1fr); } }
+        #spouseVisaForm.wizard-on .form-group { display: none; }
+        #spouseVisaForm.wizard-on .form-group.active { display: block; animation: quizIn 0.3s ease; }
+        @keyframes quizIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+        .wizard-back, .wizard-next { background: none; border: none; color: #2563EB; font-weight: 600; cursor: pointer; font-size: 1rem; padding: 0.75rem 0; }
+        .wizard-back:hover, .wizard-next:hover { text-decoration: underline; }
         #form-section.form-container { margin: 0 auto 3rem auto; }
         .hero-eyebrow { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.18em; color: #BFDBFE; margin: 0 0 1rem 0; }
         .hero-trust { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 0.75rem; margin: 0 0 2rem 0; font-size: 0.875rem; font-weight: 600; color: #E5E7EB; }
@@ -360,7 +365,11 @@
                             <div class="error-message" id="liveError"></div>
                         </div>
 
-                        <button type="submit" id="submitSpouseVisaBtn" class="btn btn-blue">See my result</button>
+                        <div class="wizard-nav" id="wizardNav" style="display:none;justify-content:space-between;align-items:center;margin-top:1.25rem;gap:1rem;">
+                        <button type="button" id="wizardBack" class="wizard-back" style="display:none;">&#8592; Back</button>
+                        <button type="button" id="wizardNext" class="wizard-next" style="display:none;">Continue &#8594;</button>
+                    </div>
+                    <button type="submit" id="submitSpouseVisaBtn" class="btn btn-blue">See my result</button>
                         <div id="formErrorMessage" class="form-global-error">Please fill in all required fields marked in red.</div>
                     </form>
                     <div id="resultArea"></div>
@@ -908,29 +917,121 @@
         (function () {
             var form = document.getElementById('spouseVisaForm');
             if (!form) return;
+            var nav = document.getElementById('wizardNav');
+            var back = document.getElementById('wizardBack');
+            var next = document.getElementById('wizardNext');
+            var submit = document.getElementById('submitSpouseVisaBtn');
             var lbl = document.getElementById('quizProgressLabel');
             var bar = document.getElementById('quizProgressFill');
-            var names = ['isPartnerColombian', 'isMarried', 'marriageLocation', 'isRegistered', 'applicationCountry', 'criminalRecord', 'liveTogether'];
-            function update() {
-                var answered = 0, total = 0, first = -1;
-                names.forEach(function (n, i) {
-                    var field = form.querySelector('[name="' + n + '"]');
-                    if (!field) return;
-                    var group = field.closest('.form-group');
-                    if (group && (group.style.display === 'none' || group.classList.contains('hidden'))) return;
-                    total++;
-                    var done = (field.type === 'radio' || field.type === 'checkbox')
-                        ? !!form.querySelector('[name="' + n + '"]:checked')
-                        : !!field.value;
-                    if (done) answered++;
-                    else if (first < 0) first = i + 1;
-                });
-                if (first < 0) first = Math.max(total, 1);
-                if (lbl) lbl.textContent = 'Question ' + first + ' of 7';
-                if (bar) bar.style.width = Math.round(answered / Math.max(total, 1) * 100) + '%';
+            var ORDER = ['isPartnerColombian', 'isMarried', 'marriageLocation', 'isRegistered', 'applicationCountry', 'criminalRecord', 'liveTogether'];
+            var ERRMSG = { applicationCountry: 'Please select where you plan to apply from.' };
+            var ERRID = { isPartnerColombian: 'partnerColombianError', isMarried: 'marriedError', marriageLocation: 'locationError', isRegistered: 'registeredError', applicationCountry: 'appCountryError', criminalRecord: 'criminalError', liveTogether: 'liveError' };
+            var groups = {};
+            ORDER.forEach(function (n) {
+                var f = form.querySelector('[name="' + n + '"]');
+                if (f) { var g = f.closest('.form-group'); if (g) groups[n] = g; }
+            });
+            var cur = null;
+            function isExcluded(n) {
+                if (n === 'isRegistered') {
+                    var loc = form.querySelector('[name="marriageLocation"]:checked');
+                    return !(loc && loc.value === 'abroad');
+                }
+                return false;
             }
-            form.addEventListener('change', update);
-            update();
+            function visibleNames() {
+                return ORDER.filter(function (n) { return groups[n] && !isExcluded(n); });
+            }
+            function fieldAnswered(n) {
+                var f = form.querySelector('[name="' + n + '"]');
+                if (!f) return true;
+                if (f.type === 'select-one') return !!f.value;
+                return !!form.querySelector('[name="' + n + '"]:checked');
+            }
+            function validateStep(n) {
+                var f = form.querySelector('[name="' + n + '"]');
+                if (!f) return true;
+                var ok;
+                var el = document.getElementById(ERRID[n]);
+                if (f.type === 'select-one') { ok = !!f.value; f.classList.toggle('border-red-500', !ok); }
+                else {
+                    ok = !!form.querySelector('[name="' + n + '"]:checked');
+                    var lbs = form.querySelectorAll('[name="' + n + '"] + label');
+                    for (var i = 0; i < lbs.length; i++) lbs[i].classList.toggle('border-red-500', !ok);
+                }
+                if (el) el.textContent = ok ? '' : (ERRMSG[n] || 'Please select an option.');
+                return ok;
+            }
+            function clearRegistration() {
+                var reg = groups['isRegistered'];
+                if (!reg) return;
+                var checked = reg.querySelectorAll('input:checked');
+                for (var i = 0; i < checked.length; i++) checked[i].checked = false;
+                var re = document.getElementById('registeredError');
+                if (re) re.textContent = '';
+                var rl = reg.querySelectorAll('.radio-custom-label');
+                for (var j = 0; j < rl.length; j++) rl[j].classList.remove('border-red-500');
+            }
+            function paint(scroll) {
+                var vis = visibleNames();
+                if (vis.indexOf(cur) < 0) cur = vis[0];
+                ORDER.forEach(function (n) {
+                    var g = groups[n];
+                    if (!g) return;
+                    var on = (n === cur);
+                    g.classList.toggle('active', on);
+                    g.style.display = on ? '' : 'none';
+                });
+                var done = vis.filter(fieldAnswered).length;
+                var idx = vis.indexOf(cur);
+                if (lbl) lbl.textContent = 'Question ' + (idx + 1) + ' of ' + vis.length;
+                if (bar) bar.style.width = Math.round(done / Math.max(vis.length, 1) * 100) + '%';
+                var last = idx === vis.length - 1;
+                var showBack = idx > 0;
+                var showNext = !last;
+                var showSubmit = last && fieldAnswered(cur);
+                if (back) back.style.display = showBack ? '' : 'none';
+                if (next) next.style.display = showNext ? '' : 'none';
+                if (nav) nav.style.display = (showBack || showNext) ? 'flex' : 'none';
+                if (submit) submit.style.display = showSubmit ? '' : 'none';
+                if (scroll && groups[cur] && groups[cur].scrollIntoView) groups[cur].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+            function goNext() {
+                if (!cur) return;
+                if (!validateStep(cur)) return;
+                var vis = visibleNames();
+                var idx = vis.indexOf(cur);
+                if (idx >= 0 && idx < vis.length - 1) { cur = vis[idx + 1]; paint(true); }
+                else paint(false);
+            }
+            form.addEventListener('change', function (e) {
+                var t = e.target;
+                if (!t || !t.name || !groups[t.name]) return;
+                if (!validateStep(t.name)) return;
+                if (t.name === 'marriageLocation' && t.value !== 'abroad') clearRegistration();
+                if (cur !== t.name) { cur = t.name; paint(false); return; }
+                var name = t.name;
+                var wait = (t.type === 'select-one') ? 150 : 280;
+                if (t._wizTimer) clearTimeout(t._wizTimer);
+                t._wizTimer = setTimeout(function () {
+                    if (cur !== name) return;
+                    var vis = visibleNames();
+                    var idx = vis.indexOf(name);
+                    if (idx >= 0 && idx < vis.length - 1) { cur = vis[idx + 1]; paint(true); }
+                    else paint(false);
+                }, wait);
+            });
+            if (back) back.addEventListener('click', function () {
+                var vis = visibleNames();
+                var idx = vis.indexOf(cur);
+                if (idx > 0) { cur = vis[idx - 1]; paint(true); }
+            });
+            if (next) next.addEventListener('click', function () { goNext(); });
+            if (lbl) lbl.setAttribute('aria-live', 'polite');
+            form.classList.add('wizard-on');
+            clearRegistration();
+            cur = visibleNames()[0];
+            paint(false);
         })();
     </script>
 </body>
