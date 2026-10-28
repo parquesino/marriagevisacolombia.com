@@ -923,6 +923,8 @@
             var submit = document.getElementById('submitSpouseVisaBtn');
             var lbl = document.getElementById('quizProgressLabel');
             var bar = document.getElementById('quizProgressFill');
+            var submitTimer = null;
+            var submitted = false;
             var ORDER = ['isPartnerColombian', 'isMarried', 'marriageLocation', 'isRegistered', 'applicationCountry', 'criminalRecord', 'liveTogether'];
             var ERRMSG = { applicationCountry: 'Please select where you plan to apply from.' };
             var ERRID = { isPartnerColombian: 'partnerColombianError', isMarried: 'marriedError', marriageLocation: 'locationError', isRegistered: 'registeredError', applicationCountry: 'appCountryError', criminalRecord: 'criminalError', liveTogether: 'liveError' };
@@ -989,11 +991,30 @@
                 var last = idx === vis.length - 1;
                 var showBack = idx > 0;
                 var showNext = !last;
-                var showSubmit = last && fieldAnswered(cur);
                 if (back) back.style.display = showBack ? '' : 'none';
                 if (next) next.style.display = showNext ? '' : 'none';
                 if (nav) nav.style.display = (showBack || showNext) ? 'flex' : 'none';
-                if (submit) submit.style.display = showSubmit ? '' : 'none';
+                if (submitTimer) { clearTimeout(submitTimer); submitTimer = null; }
+                var showSubmit = last && fieldAnswered(cur) && !submitted;
+                if (submit) {
+                    submit.style.display = showSubmit ? '' : 'none';
+                    if (!showSubmit && !submitted) { submit.disabled = false; submit.textContent = 'See my result'; }
+                }
+                if (showSubmit) {
+                    if (submit) { submit.disabled = true; submit.textContent = 'Checking your answers\u2026'; }
+                    submitTimer = setTimeout(function () {
+                        submitTimer = null;
+                        if (submitted) return;
+                        submitted = true;
+                        try {
+                            if (typeof form.requestSubmit === 'function') form.requestSubmit();
+                            else form.dispatchEvent(new Event('submit', { cancelable: true }));
+                        } catch (err) {
+                            submitted = false;
+                            if (submit) { submit.disabled = false; submit.textContent = 'See my result'; }
+                        }
+                    }, 650);
+                }
                 if (scroll && groups[cur] && groups[cur].scrollIntoView) groups[cur].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
             }
             function goNext() {
