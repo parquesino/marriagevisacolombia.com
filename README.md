@@ -12,6 +12,10 @@ Sitio estático en inglés, estética azul propia (`#1e3a8a`). Sin build. Deploy
 
 - `index.html` — landing principal (Spouse Visa, $650).
 - `meta/index.html`, `yt/index.html` — copias por canal (Meta / YouTube): mismos contenidos, con links de calendario propios, `noindex` y badges sin link. **Al editar precios/copy, replicar en las 3.**
+
+## Tracking por campaña (2026-11-02, NO sincronizar)
+
+- Cada copia lleva un marcador invisible de 2 caracteres zero-width al final del `text=` de WhatsApp (test y botón flotante): index-test `200B+200B`, index-btn `200B+200C`, mt-test `200B+200D`, mt-btn `200C+200B`, yt-test `200C+200C`, yt-btn `200C+200D`. Invisibles a ojo; el dashboard SOFI/WATI los detecta por subcadena. **Al replicar cambios entre copias, NO igualar los `href` de `wa.me` ni el final de `waText`: cada copia conserva SU marcador.**
 - `citizenship-and-residency-by-marriage/index.html` — página de ciudadanía y residencia (con secciones de Camila, precio único y tarifas añadidas en oct-2026).
 - `eligibility-result.html`, `meta/eligibility-result.html`, `yt/eligibility-result.html` — páginas de resultado del quiz (con links de calendario por canal).
 - Sin CSS compartido: cada HTML lleva su propio `<style>` inline.
